@@ -5,6 +5,12 @@
       <map>
         <entry key="App.axaml" value="PKBuild.csproj" />
         <entry key="MainWindow.axaml" value="PKBuild.csproj" />
+        <entry key="MainWindowView.axaml" value="PKBuild.csproj" />
+        <entry key="Styles/AppDefaultStyles.axaml" value="PKBuild.csproj" />
+        <entry key="Views/MainWindowView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/PKBBoxPageView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/PKBHomePageViewModel.axaml" value="PKBuild.csproj" />
+        <entry key="Views/PokemonView.axaml" value="PKBuild.csproj" />
       </map>
     </option>
   </component>

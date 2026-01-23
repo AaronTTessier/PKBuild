@@ -4,9 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
-             x:DataType="pkbvm:BoxPageViewModel"
-             Foreground="Black"
-             x:Class="PKBuild.Views.BoxPageView">
-    <Design.DataContext><pkbvm:BoxPageViewModel></pkbvm:BoxPageViewModel></Design.DataContext>
+             x:DataType="pkbvm:TeamsPageViewModel"
+             x:Class="PKBuild.Views.TeamsPageView">
+    <Design.DataContext><pkbvm:TeamsPageViewModel></pkbvm:TeamsPageViewModel></Design.DataContext>
     <Label Content="{Binding BuildTest}"/>
 </UserControl>

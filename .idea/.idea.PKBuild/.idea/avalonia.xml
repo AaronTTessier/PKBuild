@@ -7,10 +7,16 @@
         <entry key="MainWindow.axaml" value="PKBuild.csproj" />
         <entry key="MainWindowView.axaml" value="PKBuild.csproj" />
         <entry key="Styles/AppDefaultStyles.axaml" value="PKBuild.csproj" />
+        <entry key="Views/AnalysisPageView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/BoxPageView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/ItemsPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/MainWindowView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/MovesPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/PKBBoxPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/PKBHomePageViewModel.axaml" value="PKBuild.csproj" />
+        <entry key="Views/PokemonPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/PokemonView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/TeamsPageView.axaml" value="PKBuild.csproj" />
       </map>
     </option>
   </component>

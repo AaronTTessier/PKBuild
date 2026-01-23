@@ -46,34 +46,34 @@
                         <Border Grid.Column="0" Padding="20">
                                 <Grid RowDefinitions="*, Auto">
                                         <StackPanel Spacing="12">
-                                                <Button x:Name="BoxesBtn" Height="50" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
+                                                <Button x:Name="BoxesBtn" Height="50" Classes.active="{Binding BoxPageActiveButton}" Command="{Binding ChangeToBoxCommand}" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
                                                                 <Image Source="{SvgImage /Assets/Images/box.svg}" Width="25"/>
                                                                 <Label Content="Boxes"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 
-                                                <Button Height="50" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
+                                                <Button x:Name="PokemonBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding PokemonPageActiveButton}" Command="{Binding ChangeToPokemonCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
                                                                 <Image Source="{SvgImage /Assets/Images/image.svg}" Width="25"/>
                                                                 <Label Content="Pokemon"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 
-                                                <Button Height="50" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
+                                                <Button x:Name="ItemsBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding ItemPageActiveButton}" Command="{Binding ChangeToItemsCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
                                                                 <Image Source="{SvgImage /Assets/Images/briefcase.svg}" Width="25"/>
                                                                 <Label Content="Items"></Label>
                                                         </StackPanel>
                                                 </Button>
-                                                <Button Height="50" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
+                                                <Button x:Name="MovesBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding MovesPageActiveButton}" Command="{Binding ChangeToMovesCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
                                                                 <Image Source="/Assets/Images/shield-64.png" Width="25"/>
                                                                 <Label Content="Moves"></Label>
                                                         </StackPanel>
                                                 </Button>
-                                                <Button Height="50" Content="Teams" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
-                                                <Button Height="50" Content="Analysis" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
+                                                <Button x:Name="TeamsBtn" Height="50" Content="Teams" HorizontalAlignment="Stretch" Classes.active="{Binding TeamsPageActiveButton}" Command="{Binding ChangeToTeamsCommand}" VerticalContentAlignment="Center"/>
+                                                <Button x:Name="AnalysisBtn" Height="50" Content="Analysis" HorizontalAlignment="Stretch" Classes.active="{Binding AnalysisPageActiveButton}" Command="{Binding ChangeToAnalysisCommand}" VerticalContentAlignment="Center"/>
                                         </StackPanel>
                                         
                                         <Button Grid.Row="1" Height="50" Content="Settings" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>

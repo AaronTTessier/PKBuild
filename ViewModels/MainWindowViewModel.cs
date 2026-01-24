@@ -1,11 +1,14 @@
-using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PKBuild.Data;
+using PKBuild.Factory;
 
 namespace PKBuild.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+    private PkPageFactory _pageFactory;
+    
     [ObservableProperty]
     private string _test = "Test";
 
@@ -16,60 +19,74 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(MovesPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(TeamsPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(AnalysisPageActiveButton))]
-    private ViewModelBase _pkbCurrentPage;
+    [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
+    private PkPageViewModel _pkbCurrentPage;
 
-    private readonly BoxPageViewModel _box = new  BoxPageViewModel();
-    private readonly PokemonPageViewModel _pokemon = new PokemonPageViewModel();
-    private readonly ItemsPageViewModel _items = new ItemsPageViewModel();
-    private readonly MovesPageViewModel _moves = new MovesPageViewModel();
-    private readonly TeamsPageViewModel _teams = new TeamsPageViewModel();
-    private readonly AnalysisPageViewModel _analysis = new AnalysisPageViewModel();
+    /*private readonly BoxPageViewModel _box;
+    private readonly PokemonPageViewModel _pokemon;
+    private readonly ItemsPageViewModel _items;
+    private readonly MovesPageViewModel _moves;
+    private readonly TeamsPageViewModel _teams;
+    private readonly AnalysisPageViewModel _analysis;
+    private readonly SettingsPageViewModel _settings;*/
 
-    public bool BoxPageActiveButton => PkbCurrentPage == _box;
-    public bool PokemonPageActiveButton => PkbCurrentPage == _pokemon;
-    public bool ItemPageActiveButton => PkbCurrentPage == _items;
-    public bool MovesPageActiveButton => PkbCurrentPage == _moves;
-    public bool TeamsPageActiveButton => PkbCurrentPage == _teams;
-    public bool AnalysisPageActiveButton => PkbCurrentPage == _analysis;
+    public bool BoxPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Boxes;
+    public bool PokemonPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Pokemon;
+    public bool ItemPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Items;
+    public bool MovesPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Moves;
+    public bool TeamsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Teams;
+    public bool AnalysisPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Analysis;
+    public bool SettingsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Settings;
 
     public MainWindowViewModel()
     {
-        PkbCurrentPage = _box;
+        PkbCurrentPage = new BoxPageViewModel();
+    }
+    public MainWindowViewModel(PkPageFactory pageFactory)
+    {
+        _pageFactory = pageFactory;
+        ChangeToBox();
     }
 
     [RelayCommand]
     private void ChangeToBox()
     {
-        PkbCurrentPage = _box;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Boxes);
     }
 
     [RelayCommand]
     private void ChangeToPokemon()
     {
-        PkbCurrentPage = _pokemon;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Pokemon);
     }
 
     [RelayCommand]
     private void ChangeToItems()
     {
-        PkbCurrentPage = _items;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Items);
     }
 
     [RelayCommand]
     private void ChangeToMoves()
     {
-        PkbCurrentPage = _moves;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Moves);
     }
 
     [RelayCommand]
     private void ChangeToTeams()
     {
-        PkbCurrentPage = _teams;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Teams);
     }
 
     [RelayCommand]
     private void ChangeToAnalysis()
     {
-        PkbCurrentPage = _analysis;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Analysis);
+    }
+
+    [RelayCommand]
+    private void ChangeToSettings()
+    {
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Settings);
     }
 }

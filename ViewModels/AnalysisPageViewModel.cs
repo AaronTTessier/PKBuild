@@ -1,6 +1,12 @@
+using PKBuild.Data;
+
 namespace PKBuild.ViewModels;
 
-public class AnalysisPageViewModel : ViewModelBase
+public partial class AnalysisPageViewModel : PkPageViewModel
 {
+    public AnalysisPageViewModel()
+    {
+        PkbPageNames = PkbPageNames.Analysis;
+    }
     public string BuildTest { get; set; } = "Analysis";
 }

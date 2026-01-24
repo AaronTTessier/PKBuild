@@ -16,6 +16,7 @@
         <entry key="Views/PKBHomePageViewModel.axaml" value="PKBuild.csproj" />
         <entry key="Views/PokemonPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/PokemonView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/SettingsPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/TeamsPageView.axaml" value="PKBuild.csproj" />
       </map>
     </option>

@@ -1,6 +1,12 @@
+using PKBuild.Data;
+
 namespace PKBuild.ViewModels;
 
-public class MovesPageViewModel : ViewModelBase
+public partial class MovesPageViewModel : PkPageViewModel
 {
+    public MovesPageViewModel()
+    {
+        PkbPageNames = PkbPageNames.Moves;
+    }
     public string BuildTest { get; set; } = "Moves";
 }

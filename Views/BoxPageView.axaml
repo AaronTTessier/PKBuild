@@ -2,11 +2,467 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="800"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:BoxPageViewModel"
+             xmlns:pkbview="clr-namespace:PKBuild.Views"
              Foreground="Black"
+             Background="{DynamicResource PrimaryGridBackground}"
              x:Class="PKBuild.Views.BoxPageView">
-    <Design.DataContext><pkbvm:BoxPageViewModel></pkbvm:BoxPageViewModel></Design.DataContext>
-    <Label Content="{Binding BuildTest}"/>
+    <Design.DataContext>
+        <pkbvm:BoxPageViewModel></pkbvm:BoxPageViewModel>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto, *">
+        <Label Grid.Row="0" Background="Gray">Team Name</Label>
+
+        <Grid Grid.Row="1">
+            <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *" Margin="5">
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="2" Margin="5">
+                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
+                                    Background="{DynamicResource PrimaryTopbarBackground}">
+                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
+                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+                                Pokemon Alpha
+                            </TextBlock>
+                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpA:</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SpD:</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">SPE:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Center">
+                                    000
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" TextWrapping="Wrap"
+                                           HorizontalAlignment="Right">
+                                    000
+                                </TextBlock>
+                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
+                                    <Label>Edit Pokemon</Label>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
 </UserControl>

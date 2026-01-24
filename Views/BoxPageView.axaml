@@ -5,7 +5,6 @@
              mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="800"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:BoxPageViewModel"
-             xmlns:pkbview="clr-namespace:PKBuild.Views"
              Foreground="Black"
              Background="{DynamicResource PrimaryGridBackground}"
              x:Class="PKBuild.Views.BoxPageView">
@@ -23,12 +22,13 @@
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                            
+                            <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
+                            
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -84,11 +84,10 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
-
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -99,11 +98,11 @@
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
                             <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                                       VerticalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -159,11 +158,10 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
-
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -173,11 +171,11 @@
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
                             <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                                       VerticalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -233,11 +231,10 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
-
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -247,11 +244,11 @@
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
                             <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                                       VerticalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -307,8 +304,8 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
                         </StackPanel>
@@ -321,11 +318,11 @@
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
                             <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                                       VerticalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -381,11 +378,10 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
-
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -395,11 +391,11 @@
                                     Background="{DynamicResource PrimaryTopbarBackground}">
                             <Image Source="/Assets/Images/shield-64.png" Width="100" />
                             <TextBlock Foreground="White" Background="CadetBlue" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center">
+                                       VerticalAlignment="Center" Margin="0 10">
                                 Pokemon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}" Margin="0 10 0 0">
+                                  Background="{DynamicResource PrimaryGridBackground}">
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">HP:</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">ATK:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black" TextWrapping="Wrap">DEF:</TextBlock>
@@ -455,8 +451,8 @@
                                            HorizontalAlignment="Right">
                                     000
                                 </TextBlock>
-                                <Button Grid.Column="1" Grid.Row="6" Padding="5" Margin="0 5">
-                                    <Label>Edit Pokemon</Label>
+                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>
                         </StackPanel>

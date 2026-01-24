@@ -7,7 +7,7 @@ namespace PKBuild.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    private PkPageFactory _pageFactory;
+    private readonly PkPageFactory _pageFactory;
     
     [ObservableProperty]
     private string _test = "Test";
@@ -38,14 +38,14 @@ public partial class MainWindowViewModel : ViewModelBase
     public bool AnalysisPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Analysis;
     public bool SettingsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Settings;
 
-    public MainWindowViewModel()
+    /*public MainWindowViewModel()
     {
         PkbCurrentPage = new BoxPageViewModel();
-    }
+    }*/
     public MainWindowViewModel(PkPageFactory pageFactory)
     {
         _pageFactory = pageFactory;
-        ChangeToBox();
+        //ChangeToBox();
     }
 
     [RelayCommand]

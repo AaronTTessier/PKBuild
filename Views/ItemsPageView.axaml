@@ -5,7 +5,66 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:ItemsPageViewModel"
-             x:Class="PKBuild.Views.ItemsPageView">
+             x:Class="PKBuild.Views.ItemsPageView"
+             Foreground="Black">
     <Design.DataContext><pkbvm:ItemsPageViewModel></pkbvm:ItemsPageViewModel></Design.DataContext>
-    <Label Content="{Binding BuildTest}"/>
+    
+    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *" ShowGridLines="True">
+        <!-- Left Side Content: Items Box -->
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20">
+            
+            <TextBlock>Item Search</TextBlock>
+            
+            <TextBox Watermark="Search for items..." Foreground="Black" CaretBrush="Black">
+                
+            </TextBox>
+            
+        </StackPanel>
+        
+        <ListBox Grid.Column="0" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="20" ItemsSource="{Binding TestItems}"/>
+        
+        <!-- Right Side Content: Items Description and Buttons-->
+        <Grid Grid.Column="1" Grid.Row="0" ColumnDefinitions="Auto, Auto" RowDefinitions="*" Margin="20">
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <TextBlock>Test</TextBlock>
+                
+                <ComboBox ItemsSource="{Binding TestItems}">
+                
+                </ComboBox>
+            </StackPanel>
+            
+            
+            
+            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Margin="15">
+                <Button>
+                    <Label>Add Item</Label>
+                </Button>
+            
+                <Button>
+                    <Label>Delete Item</Label>
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+            
+        
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
+            
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="10" Spacing="5">
+                <Label>Item</Label>
+                
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *" ShowGridLines="True">
+                    <Label Grid.Column="0" Grid.Row="0">Name</Label>
+                    <Label Grid.Column="1" Grid.Row="0">Description</Label>
+                    
+                    <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="2"/>
+                    
+                    <TextBlock Grid.Column="0" Grid.Row="2">Test</TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at magna mauris. Fusce ac nisl ut nunc pellentesque tincidunt. Pellentesque hendrerit tortor sit amet finibus. </TextBlock>
+                    
+                </Grid>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
 </UserControl>

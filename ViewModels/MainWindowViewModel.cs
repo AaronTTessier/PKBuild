@@ -22,14 +22,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
     private PkPageViewModel _pkbCurrentPage;
 
-    /*private readonly BoxPageViewModel _box;
-    private readonly PokemonPageViewModel _pokemon;
-    private readonly ItemsPageViewModel _items;
-    private readonly MovesPageViewModel _moves;
-    private readonly TeamsPageViewModel _teams;
-    private readonly AnalysisPageViewModel _analysis;
-    private readonly SettingsPageViewModel _settings;*/
-
     public bool BoxPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Boxes;
     public bool PokemonPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Pokemon;
     public bool ItemPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Items;
@@ -38,14 +30,16 @@ public partial class MainWindowViewModel : ViewModelBase
     public bool AnalysisPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Analysis;
     public bool SettingsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Settings;
 
-    /*public MainWindowViewModel()
+    
+    // TODO: Remove after finishing design
+    public MainWindowViewModel()
     {
-        PkbCurrentPage = new BoxPageViewModel();
-    }*/
+        PkbCurrentPage = new ItemsPageViewModel();
+    }
     public MainWindowViewModel(PkPageFactory pageFactory)
     {
         _pageFactory = pageFactory;
-        //ChangeToBox();
+        ChangeToItems();
     }
 
     [RelayCommand]

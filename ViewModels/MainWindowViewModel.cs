@@ -34,7 +34,7 @@ public partial class MainWindowViewModel : ViewModelBase
     // TODO: Remove after finishing design
     public MainWindowViewModel()
     {
-        PkbCurrentPage = new ItemsPageViewModel();
+        PkbCurrentPage = new MovesPageViewModel();
     }
     public MainWindowViewModel(PkPageFactory pageFactory)
     {

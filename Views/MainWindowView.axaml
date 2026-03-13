@@ -74,7 +74,12 @@
                                                                 <Label Content="Moves"></Label>
                                                         </StackPanel>
                                                 </Button>
-                                                <Button x:Name="TeamsBtn" Height="50" Content="Teams" HorizontalAlignment="Stretch" Classes.active="{Binding TeamsPageActiveButton}" Command="{Binding ChangeToTeamsCommand}" VerticalContentAlignment="Center"/>
+                                                <Button x:Name="TeamsBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding TeamsPageActiveButton}" Command="{Binding ChangeToTeamsCommand}" VerticalContentAlignment="Center">
+                                                        <StackPanel Orientation="Horizontal">
+                                                                <Image Source="/Assets/Images/TCGP_Coin_Poké_Ball.png" Width="25"/>
+                                                                <Label Content="Teams"/>
+                                                        </StackPanel>
+                                                </Button>
                                                 <Button x:Name="AnalysisBtn" Height="50" Content="Analysis" HorizontalAlignment="Stretch" Classes.active="{Binding AnalysisPageActiveButton}" Command="{Binding ChangeToAnalysisCommand}" VerticalContentAlignment="Center"/>
                                         </StackPanel>
                                         
@@ -85,7 +90,7 @@
                         <!--SIDE BAR END-->
 				
                         <!--MAIN CONTENT BEGIN-->
-                        <ContentControl Grid.Column="1" Padding="20" Content="{Binding PkbCurrentPage}"/>
+                        <ContentControl Grid.Column="1" Padding="25 20 25 25" Content="{Binding PkbCurrentPage}"/>
                         <!--MAIN CONTENT END-->
                 </Grid>
         </Grid>

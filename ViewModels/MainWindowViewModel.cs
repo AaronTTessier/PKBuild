@@ -8,9 +8,6 @@ namespace PKBuild.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly PkPageFactory _pageFactory;
-    
-    [ObservableProperty]
-    private string _test = "Test";
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(BoxPageActiveButton))]
@@ -20,27 +17,30 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(TeamsPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(AnalysisPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
-    private PkPageViewModel _pkbCurrentPage;
+    private PkPageViewModel? _pkbCurrentPage;
 
-    public bool BoxPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Boxes;
-    public bool PokemonPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Pokemon;
-    public bool ItemPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Items;
-    public bool MovesPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Moves;
-    public bool TeamsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Teams;
-    public bool AnalysisPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Analysis;
-    public bool SettingsPageActiveButton => PkbCurrentPage.PkbPageNames == PkbPageNames.Settings;
+    public bool BoxPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Boxes;
+    public bool PokemonPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Pokemon;
+    public bool ItemPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Items;
+    public bool MovesPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Moves;
+    public bool TeamsPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Teams;
+    public bool AnalysisPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Analysis;
+    public bool SettingsPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Settings;
 
-    
-    // TODO: Remove after finishing design
+    /// <summary>
+    /// No-Parameter Constructor for Design-Time only
+    /// TODO: Remove after finishing design
+    /// </summary>
+    /// <param name="pageFactory"></param>
     public MainWindowViewModel()
     {
-        PkbCurrentPage = new MovesPageViewModel();
+        PkbCurrentPage = new TeamsPageViewModel();
     }
-    public MainWindowViewModel(PkPageFactory pageFactory)
+    /*public MainWindowViewModel(PkPageFactory pageFactory)
     {
         _pageFactory = pageFactory;
-        ChangeToItems();
-    }
+        ChangeToTeams();
+    }*/
 
     [RelayCommand]
     private void ChangeToBox()

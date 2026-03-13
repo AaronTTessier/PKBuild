@@ -33,6 +33,8 @@
       <AvaloniaResource Include="Assets\Images\briefcase.svg" />
       <None Remove="Assets\Images\shield-64.png" />
       <AvaloniaResource Include="Assets\Images\shield-64.png" />
+      <None Remove="Assets\Images\TCGP_Coin_Poké_Ball.png" />
+      <AvaloniaResource Include="Assets\Images\TCGP_Coin_Poké_Ball.png" />
     </ItemGroup>
 
     <ItemGroup>

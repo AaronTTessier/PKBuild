@@ -5,6 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
         Width="1400" Height="800"
         MinWidth="1400" MinHeight="800"
+        Icon="/Assets/Images/icon.ico"
+        WindowStartupLocation="CenterScreen"
         x:Class="PKBuild.MainWindowView"
         xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
         xmlns:pkbview="clr-namespace:PKBuild.Views"

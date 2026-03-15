@@ -20,6 +20,12 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.14" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
         <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.9.2" />
     </ItemGroup>
@@ -35,6 +41,8 @@
       <AvaloniaResource Include="Assets\Images\shield-64.png" />
       <None Remove="Assets\Images\TCGP_Coin_Poké_Ball.png" />
       <AvaloniaResource Include="Assets\Images\TCGP_Coin_Poké_Ball.png" />
+      <None Remove="Assets\Images\icon.ico" />
+      <AvaloniaResource Include="Assets\Images\icon.ico" />
     </ItemGroup>
 
     <ItemGroup>

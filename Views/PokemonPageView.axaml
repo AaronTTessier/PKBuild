@@ -8,5 +8,4 @@
              Foreground="Black"
              x:Class="PKBuild.Views.PokemonPageView">
     <Design.DataContext><pkbvm:PokemonPageViewModel></pkbvm:PokemonPageViewModel></Design.DataContext>
-    <Label Content="{Binding BuildTest}"/>
 </UserControl>

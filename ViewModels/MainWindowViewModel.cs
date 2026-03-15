@@ -32,15 +32,15 @@ public partial class MainWindowViewModel : ViewModelBase
     /// TODO: Remove after finishing design
     /// </summary>
     /// <param name="pageFactory"></param>
-    public MainWindowViewModel()
+    /*public MainWindowViewModel()
     {
         PkbCurrentPage = new TeamsPageViewModel();
-    }
-    /*public MainWindowViewModel(PkPageFactory pageFactory)
+    }*/
+    public MainWindowViewModel(PkPageFactory pageFactory)
     {
         _pageFactory = pageFactory;
         ChangeToTeams();
-    }*/
+    }
 
     [RelayCommand]
     private void ChangeToBox()

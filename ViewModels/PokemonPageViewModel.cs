@@ -8,5 +8,4 @@ public partial class PokemonPageViewModel : PkPageViewModel
     {
         PkbPageNames = PkbPageNames.Pokemon;
     }
-    public string BuildTest { get; set; } = "Pokemon";
 }

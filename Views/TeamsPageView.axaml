@@ -9,7 +9,7 @@
     <Design.DataContext><pkbvm:TeamsPageViewModel></pkbvm:TeamsPageViewModel></Design.DataContext>
     <Grid RowDefinitions="Auto, *, Auto">
         <StackPanel Grid.Row="0" Background="Gray">
-            <Label FontSize="20" HorizontalAlignment="Center">Team Name</Label>
+            <Label x:Name="TeamNameLabel" FontSize="20" HorizontalAlignment="Center">Team Name</Label>
         </StackPanel>
         
         <Grid Grid.Row="1">
@@ -32,19 +32,19 @@
                                 <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
                                 <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
                                 <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                <ItemsControl Grid.Row="0" Grid.Column="1" Foreground="Black" ItemsSource="{Binding Pokemon}"><TextBlock Text="{Binding Pokemon[0].EVDef}"></TextBlock></ItemsControl>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black" Text="{Binding Pokemon[0].EVAtk}"></TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" Text="{Binding Pokemon[0].EVDef}"></TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black" Text="{Binding Pokemon[0].EVSpA}"></TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black" Text="{Binding Pokemon[0].EVSpD}"></TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black" Text="{Binding Pokemon[0].EVSpe}"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black" >000</TextBlock>
+                                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ChangePokemonCommand}">
                                     <TextBlock>Edit Pokemon</TextBlock>
                                 </Button>
                             </Grid>

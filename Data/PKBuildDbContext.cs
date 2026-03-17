@@ -7,12 +7,10 @@ public class PKBuildDbContext : DbContext
 {
     
     public DbSet<PokemonPageModel> Pokemon { get; set; }
-    
-    // TODO: User Table
-    
-    // TODO: Pokemon Teams Table(Junction Table)
-    
-    // TODO: Base Stats Table
+    public DbSet<UserPageModel> Users { get; set; }
+    public DbSet<BaseStatsPageModel> BaseStats { get; set; }
+    public DbSet<PkmnTeamsJointPageModel> PkmnTeams { get; set; }
+    public DbSet<TeamsPageModel> Teams { get; set; }
     
     // TODO: Teams Table
     

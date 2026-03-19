@@ -7,9 +7,9 @@ namespace PKBuild.ViewModels;
 
 public partial class TeamsPageViewModel : PkPageViewModel
 {
-    private ObservableCollection<PokemonPageModel> _pokemon;
+    private ObservableCollection<PokemonPageModel>? _pokemon;
 
-    public ObservableCollection<PokemonPageModel> Pokemon
+    public ObservableCollection<PokemonPageModel>? Pokemon
     {
         get => _pokemon;
         set => SetProperty(ref _pokemon, value);
@@ -18,7 +18,7 @@ public partial class TeamsPageViewModel : PkPageViewModel
     [RelayCommand]
     private void ChangePokemon()
     {
-        Pokemon[0].EVDef = Pokemon[0].EVDef == 75 ? 150 : 75;
+        if (Pokemon != null) Pokemon[0].EVDef = Pokemon[0].EVDef == 75 ? 150 : 75;
     }
 
     [RelayCommand]

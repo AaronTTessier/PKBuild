@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PKBuild.Models;
@@ -10,7 +11,7 @@ public partial class BaseStatsPageModel : ObservableObject
 
     [ObservableProperty] private int _statTotal = 0;
 
-    [ObservableProperty] private int _statHP = 0;
+    [ObservableProperty] private int _statHp = 0;
     
     [ObservableProperty] private int _statAtk = 0;
     
@@ -21,4 +22,7 @@ public partial class BaseStatsPageModel : ObservableObject
     [ObservableProperty] private int _statSpD = 0;
     
     [ObservableProperty] private int _statSpe = 0;
+    
+    //One-to-many navigation with Pokémon dependents
+    public ICollection<PokemonPageModel>  Pokemon { get; } = new List<PokemonPageModel>();
 }

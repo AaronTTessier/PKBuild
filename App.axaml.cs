@@ -2,9 +2,11 @@ using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PKBuild.Data;
 using PKBuild.Factory;
+using PKBuild.Models;
 using PKBuild.ViewModels;
 
 namespace PKBuild;

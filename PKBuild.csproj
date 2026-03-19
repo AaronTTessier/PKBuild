@@ -26,6 +26,10 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="11.0.0-preview.2.26159.112">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
         <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.9.2" />
     </ItemGroup>
@@ -50,5 +54,9 @@
         <DependentUpon>MainWindowView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
     </ItemGroup>
 </Project>

@@ -1,13 +1,24 @@
+using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PKBuild.Models;
 
 public partial class PokemonPageModel : ObservableObject
 {
-    public int PkmnId { get; set; }
-    public int UserId { get; set; }
-    public int StatId { get; set; }
-    public int GenId { get; set; }
+    public int PkmnId { get; init; }
+    public int UserId { get; init; }
+    
+    //Required for navigation to parent (User)
+    public UserPageModel User { get; set; } = null!;
+
+    //Required for navigation to parent (Base Stats)
+    public BaseStatsPageModel BaseStats { get; set; } = null!;
+
+    public int StatId { get; init; }
+    public int GenId { get; init; }
+    
+    //Required for mapping by convention for EF Core for PkmnTeams Join Table
+    public ICollection<TeamsPageModel> Teams { get; } = [];
 
     [ObservableProperty] private int _pkdxRegNum;
     
@@ -45,7 +56,7 @@ public partial class PokemonPageModel : ObservableObject
     
     [ObservableProperty] private int? _teraOverrideType;
 
-    public PokemonPageModel()
+    /*public PokemonPageModel()
     {
         PkmnId = 0;
         UserId = 0;
@@ -66,5 +77,5 @@ public partial class PokemonPageModel : ObservableObject
         IVSpA = 0;
         IVSpD = 0;
         IVSpe = 0;
-    }
+    }*/
 }

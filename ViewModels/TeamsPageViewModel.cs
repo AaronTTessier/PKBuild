@@ -18,14 +18,14 @@ public partial class TeamsPageViewModel : PkPageViewModel
     [RelayCommand]
     private void ChangePokemon()
     {
-        if (Pokemon != null) Pokemon[0].EVDef = Pokemon[0].EVDef == 75 ? 150 : 75;
+        
     }
 
     [RelayCommand]
     public void GatherPokemon()
     {
         // TODO: Fetch from database of currently logged in user
-        var pkmnTest = new PokemonPageModel
+        /*var pkmnTest = new PokemonPageModel
         {
             PkmnId = 0,
             UserId = 0,
@@ -49,12 +49,12 @@ public partial class TeamsPageViewModel : PkPageViewModel
             GMax = true,
             TeraBaseType = 0,
             TeraOverrideType = null
-        };
 
         Pokemon =
         [
             pkmnTest
         ];
+        };*/
     }
     
     public TeamsPageViewModel()

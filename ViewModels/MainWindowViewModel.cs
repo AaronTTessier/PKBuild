@@ -1,3 +1,4 @@
+using System;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
@@ -38,7 +39,7 @@ public partial class MainWindowViewModel : ViewModelBase
     }*/
     public MainWindowViewModel(PkPageFactory pageFactory)
     {
-        _pageFactory = pageFactory;
+        _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
         ChangeToTeams();
     }
 

@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PKBuild.Data;
 using PKBuild.Factory;
 using PKBuild.Models;
+using PKBuild.Services;
 using PKBuild.ViewModels;
 
 namespace PKBuild;
@@ -43,6 +44,9 @@ public partial class App : Application
         });
         
         collection.AddSingleton<PkPageFactory>();
+
+        collection.AddTransient<PKBuildDbContext>();
+        collection.AddTransient<PkDatabaseService>();
         
         var services = collection.BuildServiceProvider();
         

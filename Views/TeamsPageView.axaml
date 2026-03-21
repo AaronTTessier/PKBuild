@@ -11,7 +11,7 @@
     </Design.DataContext>
     <Grid RowDefinitions="Auto, *, Auto">
         <StackPanel Grid.Row="0" Background="Gray">
-            <Label x:Name="TeamNameLabel" FontSize="20" HorizontalAlignment="Center">Team Name</Label>
+            <Label x:Name="TeamNameLabel" FontSize="25" HorizontalAlignment="Center">Team Name</Label>
         </StackPanel>
 
         <Grid Grid.Row="1">
@@ -23,11 +23,14 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
 
                             <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
+                                Pokémon Alpha
                             </TextBlock>
 
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">Effort Values</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">Total</TextBlock>
+                                
                                 <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">HP:</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
                                 <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
@@ -35,7 +38,6 @@
                                 <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
                                 <TextBlock Grid.Row="6" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
 
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">Effort Values</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
                                 <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
@@ -43,7 +45,6 @@
                                 <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
                                 <TextBlock Grid.Row="6" Grid.Column="1" Foreground="Black">000</TextBlock>
 
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">Total</TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
@@ -67,7 +68,7 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
                             <TextBlock Foreground="White" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
+                                Pokémon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">
@@ -110,7 +111,7 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
                             <TextBlock Foreground="White" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
+                                Pokémon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">
@@ -153,7 +154,7 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
                             <TextBlock Foreground="White" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
+                                Pokémon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">
@@ -196,7 +197,7 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
                             <TextBlock Foreground="White" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
+                                Pokémon Alpha
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">
@@ -239,7 +240,7 @@
                             <Image Source="/Assets/Images/shield-64.png" Width="75" />
                             <TextBlock Foreground="White" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Foxtrot
+                                Pokémon Foxtrot
                             </TextBlock>
                             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*"
                                   Background="{DynamicResource PrimaryGridBackground}">

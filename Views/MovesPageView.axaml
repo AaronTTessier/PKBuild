@@ -9,7 +9,7 @@
              Foreground="Black">
     <Design.DataContext><pkbvm:MovesPageViewModel></pkbvm:MovesPageViewModel></Design.DataContext>
     
-    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *" ShowGridLines="True">
+    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
         <!-- Left Side Content: Items Box -->
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20">
             

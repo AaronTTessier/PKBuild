@@ -95,5 +95,9 @@
                         <ContentControl Grid.Column="1" Padding="25 20 25 25" Content="{Binding PkbCurrentPage}"/>
                         <!--MAIN CONTENT END-->
                 </Grid>
+                <!--<Grid Grid.Row="0" Grid.RowSpan="2" Background="Transparent" IsVisible="{Binding LoginDialog.IsOpen}">
+                        <Border Background="Black" Opacity="0.5"></Border>
+                        <ContentControl Content="{Binding LoginDialog}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>-->
         </Grid>
 </Window>

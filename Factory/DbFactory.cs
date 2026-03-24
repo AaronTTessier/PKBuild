@@ -1,10 +1,18 @@
 using System;
 using PKBuild.Data;
+using PKBuild.Services;
 using PKBuild.ViewModels;
 
 namespace PKBuild.Factory;
 
-public class DbFactory(Func<PkbPageNames, PkPageViewModel> dbFactory)
+public class DbFactory(Func<PkDatabaseService> dbFactory)
 {
-    public PkPageViewModel GetPkPageViewModel(PkbPageNames pageNames) => dbFactory.Invoke(pageNames);
+    public PkDatabaseService GetDbService(Action<PkDatabaseService>? afterCreation = null)
+    {
+        var databaseService = dbFactory();
+        
+        afterCreation?.Invoke(databaseService);
+
+        return databaseService;
+    }
 }

@@ -1,27 +1,40 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
+using PokeApiNet;
 
 namespace PKBuild.ViewModels;
 
 public partial class ItemsPageViewModel : PkPageViewModel
 {
-    [ObservableProperty] 
-    private List<string> _testItems;
+    private ObservableCollection<string>? _searchedItems;
+
+    public ObservableCollection<string>? SearchedItems
+    {
+        get => _searchedItems;
+        set => SetProperty(ref _searchedItems, value);
+    }
     
+    private ObservableCollection<string>?  _retrievedItems;
+
+    public ObservableCollection<string>? RetrievedItems
+    {
+        get => _retrievedItems;
+        set => SetProperty(ref _retrievedItems, value);
+    }
+
     public ItemsPageViewModel()
     {
         PkbPageNames = PkbPageNames.Items;
-        
-        // TEMP: Please remove after testing
-        TestItems =
-        [
-            "Test 1",
-            "Test 2",
-            "Test 3",
-            "Test 4",
-            "Test 5"
-        ];
+        _searchedItems = [];
     }
-    
+
+    [RelayCommand]
+    private async Task SearchTest()
+    {
+        
+    }
 }

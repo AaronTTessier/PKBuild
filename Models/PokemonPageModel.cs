@@ -8,11 +8,16 @@ public partial class PokemonPageModel : ObservableObject
     public int PkmnId { get; init; }
     public int UserId { get; init; }
     
+    public int? ItemId { get; init; }
+    
     //Required for navigation to parent (User)
     public UserPageModel User { get; set; } = null!;
 
     //Required for navigation to parent (Base Stats)
     public BaseStatsPageModel BaseStats { get; set; } = null!;
+    
+    //Required for optional navigation to parent (Items)
+    public ItemPageModel? Items { get; set; }
 
     public int StatId { get; init; }
     public int GenId { get; init; }

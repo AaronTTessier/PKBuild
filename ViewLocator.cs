@@ -30,5 +30,5 @@ public class ViewLocator : IDataTemplate
         return control;
     }
 
-    public bool Match(object? expectedViewModel) => expectedViewModel is ViewModelBase;
+    public bool Match(object? expectedViewModel) => expectedViewModel is ViewModelBase or DialogViewModel;
 }

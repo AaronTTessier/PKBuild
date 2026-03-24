@@ -9,19 +9,22 @@
              Foreground="Black">
     <Design.DataContext><pkbvm:ItemsPageViewModel></pkbvm:ItemsPageViewModel></Design.DataContext>
     
-    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *" ShowGridLines="True">
+    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
         <!-- Left Side Content: Items Box -->
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20">
             
             <TextBlock>Item Search</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Watermark="Search for items..." Foreground="Black" CaretBrush="Black" Width="250"/>
+                <Button x:Name="SearchItemBtn" Width="90" HorizontalContentAlignment="Center" Command="{Binding SearchTestCommand}">
+                    <Label>Search</Label>
+                </Button>
+            </StackPanel>
             
-            <TextBox Watermark="Search for items..." Foreground="Black" CaretBrush="Black">
-                
-            </TextBox>
             
         </StackPanel>
         <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
-            <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="20" ItemsSource="{Binding TestItems}"/>
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="20" ItemsSource=""/>
         </Border>
         
         <!-- Right Side Content: Items Description and Buttons-->
@@ -29,7 +32,7 @@
             <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
                 <TextBlock>Test</TextBlock>
                 
-                <ComboBox x:Name="ComboBoxPokemon" ItemsSource="{Binding TestItems}">
+                <ComboBox x:Name="ComboBoxPokemon" ItemsSource="">
                 
                 </ComboBox>
             </StackPanel>
@@ -52,7 +55,7 @@
             <StackPanel Orientation="Vertical" Margin="10" Spacing="5">
                 <Label>Item</Label>
                 
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *" ShowGridLines="True">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *">
                     <Label Grid.Column="0" Grid.Row="0">Name</Label>
                     <Label Grid.Column="1" Grid.Row="0">Description</Label>
                     

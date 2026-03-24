@@ -19,6 +19,8 @@
         <SolidColorBrush x:Key="PrimaryTopbarBackground">#E85344</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryGridBackground">#F3F3F3</SolidColorBrush>
         
+        <SolidColorBrush x:Key="PrimaryTextForeground">#212529</SolidColorBrush>
+        
         <SolidColorBrush x:Key="PrimaryButton">#CDCDCD</SolidColorBrush>
         <SolidColorBrush x:Key="ButtonPointerOver">#767676</SolidColorBrush>
         <SolidColorBrush x:Key="ActiveButton">#8F322A</SolidColorBrush>

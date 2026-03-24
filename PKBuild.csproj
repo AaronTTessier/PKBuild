@@ -20,6 +20,7 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.9" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
           <PrivateAssets>all</PrivateAssets>
@@ -31,6 +32,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
+        <PackageReference Include="PokeApiNet" Version="4.1.0" />
         <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.9.2" />
     </ItemGroup>
 

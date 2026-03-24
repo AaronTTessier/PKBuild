@@ -10,6 +10,7 @@
         <entry key="Views/AnalysisPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/BoxPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/ItemsPageView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/LoginDialogView.axaml" value="PKBuild.csproj" />
         <entry key="Views/MainWindowView.axaml" value="PKBuild.csproj" />
         <entry key="Views/MovesPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/PKBBoxPageView.axaml" value="PKBuild.csproj" />

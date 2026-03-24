@@ -47,6 +47,9 @@ public partial class App : Application
 
         collection.AddTransient<PKBuildDbContext>();
         collection.AddTransient<PkDatabaseService>();
+
+        collection.AddSingleton<Func<PkDatabaseService>>(x => x.GetRequiredService<PkDatabaseService>);
+        collection.AddSingleton<DbFactory>();
         
         var services = collection.BuildServiceProvider();
         

@@ -3,12 +3,15 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
 using PKBuild.Factory;
+using PKBuild.Models;
+using PKBuild.Services;
 
 namespace PKBuild.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly PkPageFactory _pageFactory;
+    private readonly DbFactory _dbFactory;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(BoxPageActiveButton))]
@@ -19,6 +22,8 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(AnalysisPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
     private PkPageViewModel? _pkbCurrentPage;
+
+    [ObservableProperty] private DialogViewModel? _loginDialog;
 
     public bool BoxPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Boxes;
     public bool PokemonPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Pokemon;
@@ -32,17 +37,36 @@ public partial class MainWindowViewModel : ViewModelBase
     /// No-Parameter Constructor for Design-Time only
     /// TODO: Remove after finishing design
     /// </summary>
-    /// <param name="pageFactory"></param>
     /*public MainWindowViewModel()
     {
         PkbCurrentPage = new TeamsPageViewModel();
     }*/
-    public MainWindowViewModel(PkPageFactory pageFactory)
+    public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
+        _dbFactory = dbFactory ?? throw new ArgumentNullException(nameof(dbFactory));
+
+        using var dbContext = _dbFactory.GetDbService();
+        dbContext.ApplyAllMigrations();
+
+        UserPageModel userTest = new UserPageModel
+        {
+            UserId = 0,
+            UserName = "Attessier",
+            FirstName = "Aaron",
+            Email = "test@gmail.com",
+            PasswordHash = ""
+        };
+        dbContext.UserRegister(userTest, "testword");
         ChangeToTeams();
     }
 
+    [RelayCommand]
+    private void OpenLoginDialog()
+    {
+        LoginDialog.IsOpen = true;
+    }
+    
     [RelayCommand]
     private void ChangeToBox()
     {

@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
+             x:DataType="pkbvm:LoginDialogViewModel"
+             Background="Transparent"
+             Foreground="{DynamicResource PrimaryTextForeground}"
+             x:Class="PKBuild.Views.LoginDialogView">
+    <Design.DataContext><pkbvm:LoginDialogViewModel></pkbvm:LoginDialogViewModel></Design.DataContext>
+    
+    <Border Background="{DynamicResource PrimaryGridBackground}" CornerRadius="0" Margin="15">
+        <StackPanel>
+            
+            <!-- PKBuild Login Title Start -->
+            <Border Background="{DynamicResource PrimaryTopbarBackground}">
+                <TextBlock Text="{Binding DialogTitle}" Padding="20" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextForeground}" HorizontalAlignment="Center"/>
+            </Border>
+            <!-- PKBuild Login Title End -->
+            
+            <!-- PKBuild Login Text Start -->
+            <Border Background="{DynamicResource PrimaryTopbarBackground}">
+                <TextBlock Text="{Binding Message}" Margin="0 0 0 20" FontSize="15" Foreground="{DynamicResource PrimaryGridBackground}" HorizontalAlignment="Center"/>
+            </Border>
+            <!-- PKBuild Login Text End -->
+            
+            <!-- PKBuild Login TextBoxes Start -->
+            <StackPanel>
+                <TextBox x:Name="UsernameLoginBox" Margin="0 20 " Width="200" Watermark="Username"></TextBox>
+                
+                <TextBox x:Name="PasswordLoginBox" Width="200" Watermark="Password"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
+                <Button>
+                    <Label>Login</Label>
+                </Button>
+                
+                <Button>
+                    <Label>Register</Label>
+                </Button>
+            </StackPanel>
+            
+            <Border>
+                <TextBlock Text="{Binding SwitchModeText}" HorizontalAlignment="Center" Padding="5"/>
+            </Border>
+        </StackPanel>
+    </Border>
+</UserControl>

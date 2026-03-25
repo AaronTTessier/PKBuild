@@ -49,6 +49,20 @@
       <AvaloniaResource Include="Assets\Images\TCGP_Coin_Poké_Ball.png" />
       <None Remove="Assets\Images\icon.ico" />
       <AvaloniaResource Include="Assets\Images\icon.ico" />
+      <None Remove="Assets\Images\pokeball.png" />
+      <AvaloniaResource Include="Assets\Images\pokeball.png" />
+      <None Remove="Assets\Images\pokeballs.png" />
+      <AvaloniaResource Include="Assets\Images\pokeballs.png" />
+      <None Remove="Assets\Images\backpack.png" />
+      <AvaloniaResource Include="Assets\Images\backpack.png" />
+      <None Remove="Assets\Images\boxes.png" />
+      <AvaloniaResource Include="Assets\Images\boxes.png" />
+      <None Remove="Assets\Images\arrow.png" />
+      <AvaloniaResource Include="Assets\Images\arrow.png" />
+      <None Remove="Assets\Images\search.png" />
+      <AvaloniaResource Include="Assets\Images\search.png" />
+      <None Remove="Assets\Images\guardian.png" />
+      <AvaloniaResource Include="Assets\Images\guardian.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -59,6 +73,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Assets\Fonts\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
 </Project>

@@ -6,7 +6,6 @@
         Width="1400" Height="800"
         MinWidth="1400" MinHeight="800"
         Icon="/Assets/Images/icon.ico"
-        WindowStartupLocation="CenterScreen"
         x:Class="PKBuild.MainWindowView"
         xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
         xmlns:pkbview="clr-namespace:PKBuild.Views"
@@ -24,15 +23,15 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
 				
-                        <Border Classes="Topbar" Padding="20">
+                        <Border Classes="Topbar" Padding="20 15 20 0">
                                 <Grid Classes="Topbar" ColumnDefinitions="*, Auto">
                                         <StackPanel Grid.Column="0" Orientation="Horizontal">
-                                                <TextBlock TextAlignment="Center">PK-Build</TextBlock>
+                                                <TextBlock TextAlignment="Center" Padding="0 -5" FontSize="55" FontFamily="{DynamicResource LexendRegular}" FontWeight="Bold" Foreground="{DynamicResource PrimaryGridBackground}">PK-Build</TextBlock>
                                         </StackPanel>
 
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                                <Button Content="Sign In"/>
-                                                <Button Content="Register"/>
+                                                <Button Content="Sign In" Command="{Binding OpenLoginDialogCommand}"/>
+                                                <Button Content="Register" Command="{Binding OpenLoginDialogCommand}"/>
                                         </StackPanel>
                                 </Grid>
                         </Border>
@@ -52,37 +51,42 @@
                                         <StackPanel Spacing="12">
                                                 <Button x:Name="BoxesBtn" Height="50" Classes.active="{Binding BoxPageActiveButton}" Command="{Binding ChangeToBoxCommand}" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
-                                                                <Image Source="{SvgImage /Assets/Images/box.svg}" Width="25"/>
+                                                                <Image Source="/Assets/Images/boxes.png" Width="25"/>
                                                                 <Label Content="Boxes"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 
                                                 <Button x:Name="PokemonBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding PokemonPageActiveButton}" Command="{Binding ChangeToPokemonCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
-                                                                <Image Source="{SvgImage /Assets/Images/image.svg}" Width="25"/>
+                                                                <Image Source="/Assets/Images/pokeball.png" Width="25"/>
                                                                 <Label Content="Pokemon"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 
                                                 <Button x:Name="ItemsBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding ItemPageActiveButton}" Command="{Binding ChangeToItemsCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
-                                                                <Image Source="{SvgImage /Assets/Images/briefcase.svg}" Width="25"/>
+                                                                <Image Source="/Assets/Images/backpack.png" Width="25"/>
                                                                 <Label Content="Items"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 <Button x:Name="MovesBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding MovesPageActiveButton}" Command="{Binding ChangeToMovesCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
-                                                                <Image Source="/Assets/Images/shield-64.png" Width="25"/>
+                                                                <Image Source="/Assets/Images/guardian.png" Width="25"/>
                                                                 <Label Content="Moves"></Label>
                                                         </StackPanel>
                                                 </Button>
                                                 <Button x:Name="TeamsBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding TeamsPageActiveButton}" Command="{Binding ChangeToTeamsCommand}" VerticalContentAlignment="Center">
                                                         <StackPanel Orientation="Horizontal">
-                                                                <Image Source="/Assets/Images/TCGP_Coin_Poké_Ball.png" Width="25"/>
+                                                                <Image Source="/Assets/Images/pokeballs.png" Width="25"/>
                                                                 <Label Content="Teams"/>
                                                         </StackPanel>
                                                 </Button>
-                                                <Button x:Name="AnalysisBtn" Height="50" Content="Analysis" HorizontalAlignment="Stretch" Classes.active="{Binding AnalysisPageActiveButton}" Command="{Binding ChangeToAnalysisCommand}" VerticalContentAlignment="Center"/>
+                                                <Button x:Name="AnalysisBtn" Height="50" HorizontalAlignment="Stretch" Classes.active="{Binding AnalysisPageActiveButton}" Command="{Binding ChangeToAnalysisCommand}" VerticalContentAlignment="Center">
+                                                        <StackPanel Orientation="Horizontal">
+                                                                <Image Source="/Assets/Images/search.png" Width="25"/>
+                                                                <Label Content="Analysis"/>
+                                                        </StackPanel>
+                                                </Button>
                                         </StackPanel>
                                         
                                         <Button Grid.Row="1" Height="50" Content="Settings" HorizontalAlignment="Stretch" Classes.active="{Binding SettingsPageActiveButton}" Command="{Binding ChangeToSettingsCommand}" VerticalContentAlignment="Center"/>
@@ -95,9 +99,9 @@
                         <ContentControl Grid.Column="1" Padding="25 20 25 25" Content="{Binding PkbCurrentPage}"/>
                         <!--MAIN CONTENT END-->
                 </Grid>
-                <!--<Grid Grid.Row="0" Grid.RowSpan="2" Background="Transparent" IsVisible="{Binding LoginDialog.IsOpen}">
+                <Grid Grid.Row="0" Grid.RowSpan="2" Background="Transparent" IsVisible="{Binding LoginDialog.IsOpen}">
                         <Border Background="Black" Opacity="0.5"></Border>
                         <ContentControl Content="{Binding LoginDialog}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Grid>-->
+                </Grid>
         </Grid>
 </Window>

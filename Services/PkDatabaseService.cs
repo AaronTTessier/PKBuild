@@ -24,8 +24,6 @@ public class PkDatabaseService(PKBuildDbContext context) : IDisposable
     public void UserRegister(UserPageModel user, string password)
     {
         //Password-to-hash conversion algorithm needed
-        /*context.Users.Add(user);
-        context.SaveChanges();*/
     }
     
     //TODO: Finish testing logic for retrieving teams for currently logged in user

@@ -46,4 +46,44 @@
         <Setter Property="Width" Value="200"/>
     </Style>    
     
+    <Style Selector="TextBox#UsernameLoginBox">
+        <Setter Property="CaretBrush" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#PasswordLoginBox">
+        <Setter Property="CaretBrush" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#UsernameLoginBox">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#UsernameLoginBox:focus">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#UsernameLoginBox:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#PasswordLoginBox">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#PasswordLoginBox:focus">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="TextBox#PasswordLoginBox:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
+    <Style Selector="ToggleButton:unchecked">
+        <Setter Property="Background" Value="{DynamicResource PrimaryTopbarBackground}"/>
+    </Style>
+    
+    <Style Selector="ToggleButton:pointerover /template/ ContentPresenter"> 
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
+    </Style>
+    
 </Styles>

@@ -16,6 +16,9 @@
     </Application.Styles>
     
     <Application.Resources>
+        
+        <FontFamily x:Key="LexendRegular">/Assets/Fonts/Lexend-Regular.ttf#Lexend, Regular</FontFamily>
+        
         <SolidColorBrush x:Key="PrimaryTopbarBackground">#E85344</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryGridBackground">#F3F3F3</SolidColorBrush>
         

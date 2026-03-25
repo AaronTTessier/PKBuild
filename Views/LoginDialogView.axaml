@@ -5,11 +5,11 @@
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:LoginDialogViewModel"
              Background="Transparent"
-             Foreground="{DynamicResource PrimaryTextForeground}"
+             
              x:Class="PKBuild.Views.LoginDialogView">
     <Design.DataContext><pkbvm:LoginDialogViewModel></pkbvm:LoginDialogViewModel></Design.DataContext>
     
-    <Border Background="{DynamicResource PrimaryGridBackground}" CornerRadius="0" Margin="15">
+    <Border Background="{DynamicResource PrimaryGridBackground}" Margin="20" BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="5">
         <StackPanel>
             
             <!-- PKBuild Login Title Start -->
@@ -25,13 +25,20 @@
             <!-- PKBuild Login Text End -->
             
             <!-- PKBuild Login TextBoxes Start -->
-            <StackPanel>
-                <TextBox x:Name="UsernameLoginBox" Margin="0 20 " Width="200" Watermark="Username"></TextBox>
+            <StackPanel Margin="20">
+                <TextBlock Text="{Binding ErrMessage}" IsVisible="false"></TextBlock>
+                <TextBox x:Name="UsernameLoginBox" Margin="0 10 " Width="200" Watermark="Username" Text="{Binding Username}"></TextBox>
                 
-                <TextBox x:Name="PasswordLoginBox" Width="200" Watermark="Password"></TextBox>
+                <Grid ColumnDefinitions="*, Auto">
+                    <TextBox Grid.Column="0" x:Name="PasswordLoginBox" Width="200" Watermark="Password" PasswordChar="*" Text="{Binding Password}"></TextBox>
+                    <ToggleButton Grid.Column="1" Content="Reveal" IsChecked="{Binding #PasswordLoginBox.RevealPassword}"/>
+                </Grid>
+                
             </StackPanel>
+            <!-- PKBuild Login TextBoxes End -->
             
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
+            <!-- PKBuild Login Buttons Start -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button>
                     <Label>Login</Label>
                 </Button>
@@ -42,8 +49,13 @@
             </StackPanel>
             
             <Border>
-                <TextBlock Text="{Binding SwitchModeText}" HorizontalAlignment="Center" Padding="5"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
+                    <Button HorizontalAlignment="Center" Height="30" Command="{Binding CancelLoginCommand}">
+                        <Label FontSize="10">Go Back</Label>
+                    </Button>
+                </StackPanel>
             </Border>
+            <!-- PKBuild Login Buttons End -->
         </StackPanel>
     </Border>
 </UserControl>

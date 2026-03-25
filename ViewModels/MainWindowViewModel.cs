@@ -23,7 +23,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
     private PkPageViewModel? _pkbCurrentPage;
 
-    [ObservableProperty] private DialogViewModel? _loginDialog;
+    [ObservableProperty] private DialogViewModel? _loginDialog = new LoginDialogViewModel { IsOpen = false };
 
     public bool BoxPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Boxes;
     public bool PokemonPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Pokemon;
@@ -37,11 +37,11 @@ public partial class MainWindowViewModel : ViewModelBase
     /// No-Parameter Constructor for Design-Time only
     /// TODO: Remove after finishing design
     /// </summary>
-    /*public MainWindowViewModel()
+    public MainWindowViewModel()
     {
         PkbCurrentPage = new TeamsPageViewModel();
-    }*/
-    public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
+    }
+    /*public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
         _dbFactory = dbFactory ?? throw new ArgumentNullException(nameof(dbFactory));
@@ -49,22 +49,19 @@ public partial class MainWindowViewModel : ViewModelBase
         using var dbContext = _dbFactory.GetDbService();
         dbContext.ApplyAllMigrations();
 
-        UserPageModel userTest = new UserPageModel
-        {
-            UserId = 0,
-            UserName = "Attessier",
-            FirstName = "Aaron",
-            Email = "test@gmail.com",
-            PasswordHash = ""
-        };
-        dbContext.UserRegister(userTest, "testword");
         ChangeToTeams();
-    }
+    }*/
 
     [RelayCommand]
     private void OpenLoginDialog()
     {
         LoginDialog.IsOpen = true;
+    }
+
+    [RelayCommand]
+    private void CloseLoginDialog()
+    {
+        LoginDialog.IsOpen = false;
     }
     
     [RelayCommand]

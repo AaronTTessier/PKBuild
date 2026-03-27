@@ -38,15 +38,11 @@
 
     <ItemGroup>
       <None Remove="Assets\Images\box.svg" />
-      <AvaloniaResource Include="Assets\Images\box.svg" />
       <None Remove="Assets\Images\image.svg" />
-      <AvaloniaResource Include="Assets\Images\image.svg" />
       <None Remove="Assets\Images\icons8-briefcase.svg" />
-      <AvaloniaResource Include="Assets\Images\briefcase.svg" />
       <None Remove="Assets\Images\shield-64.png" />
       <AvaloniaResource Include="Assets\Images\shield-64.png" />
       <None Remove="Assets\Images\TCGP_Coin_Poké_Ball.png" />
-      <AvaloniaResource Include="Assets\Images\TCGP_Coin_Poké_Ball.png" />
       <None Remove="Assets\Images\icon.ico" />
       <AvaloniaResource Include="Assets\Images\icon.ico" />
       <None Remove="Assets\Images\pokeball.png" />

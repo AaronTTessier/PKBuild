@@ -21,9 +21,8 @@ public partial class MainWindowViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(TeamsPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(AnalysisPageActiveButton))]
     [NotifyPropertyChangedFor(nameof(SettingsPageActiveButton))]
+    [NotifyPropertyChangedFor(nameof(LoginPageActiveButton))]
     private PkPageViewModel? _pkbCurrentPage;
-
-    [ObservableProperty] private DialogViewModel? _loginDialog = new LoginDialogViewModel { IsOpen = false };
 
     public bool BoxPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Boxes;
     public bool PokemonPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Pokemon;
@@ -32,6 +31,8 @@ public partial class MainWindowViewModel : ViewModelBase
     public bool TeamsPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Teams;
     public bool AnalysisPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Analysis;
     public bool SettingsPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Settings;
+
+    public bool LoginPageActiveButton => PkbCurrentPage!.PkbPageNames == PkbPageNames.Login;
 
     /// <summary>
     /// No-Parameter Constructor for Design-Time only
@@ -53,15 +54,9 @@ public partial class MainWindowViewModel : ViewModelBase
     }*/
 
     [RelayCommand]
-    private void OpenLoginDialog()
+    private void ChangeToLogin()
     {
-        LoginDialog.IsOpen = true;
-    }
-
-    [RelayCommand]
-    private void CloseLoginDialog()
-    {
-        LoginDialog.IsOpen = false;
+        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Login);
     }
     
     [RelayCommand]

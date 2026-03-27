@@ -19,6 +19,7 @@
         <entry key="Views/PokemonView.axaml" value="PKBuild.csproj" />
         <entry key="Views/SettingsPageView.axaml" value="PKBuild.csproj" />
         <entry key="Views/TeamsPageView.axaml" value="PKBuild.csproj" />
+        <entry key="Views/Window1.axaml" value="PKBuild.csproj" />
       </map>
     </option>
   </component>

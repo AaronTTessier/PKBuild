@@ -5,26 +5,54 @@
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:LoginDialogViewModel"
              Background="Transparent"
-             
+             mc:Ignorable="d" d:DesignWidth="540" d:DesignHeight="650"
              x:Class="PKBuild.Views.LoginDialogView">
     <Design.DataContext><pkbvm:LoginDialogViewModel></pkbvm:LoginDialogViewModel></Design.DataContext>
-    
-    <Border Background="{DynamicResource PrimaryGridBackground}" Margin="20" BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="5">
+    <DockPanel Margin="20">
+        <!-- Top DockPanel Child -->
+        <StackPanel DockPanel.Dock="Top" Width="200" Background="Blue">
+            <TextBlock Text="{Binding DialogTitle}" Padding="20" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextForeground}" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Message}" Padding="0 0 0 20" FontSize="15" Foreground="{DynamicResource PrimaryGridBackground}" HorizontalAlignment="Center"/> 
+        </StackPanel>
+        
+        <!-- Bottom Dockpanel Child -->
+        <StackPanel DockPanel.Dock="Bottom" Background="Green" Spacing="10">
+            <TextBlock Text="{Binding ErrMessage}" IsVisible="{Binding HasError}" HorizontalAlignment="Center" Foreground="GreenYellow" FontSize="15"/>
+            
+            <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                <Label>Login</Label>
+            </Button>
+            
+            <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                <Label>Register</Label>
+            </Button>
+            <Button HorizontalAlignment="Center" Height="30">
+                <Label FontSize="10">Go Back</Label>
+            </Button>
+            
+        </StackPanel>
+        
+        <!-- Undocked (Center) Child -->
+        <StackPanel Background="Bisque">
+            
+        </StackPanel>
+    </DockPanel>
+    <!--<Border Background="{DynamicResource PrimaryGridBackground}" Margin="20" BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="5">
         <StackPanel>
             
-            <!-- PKBuild Login Title Start -->
+            ~1~ PKBuild Login Title Start @1@
             <Border Background="{DynamicResource PrimaryTopbarBackground}">
                 <TextBlock Text="{Binding DialogTitle}" Padding="20" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextForeground}" HorizontalAlignment="Center"/>
             </Border>
-            <!-- PKBuild Login Title End -->
+            ~1~ PKBuild Login Title End @1@
             
-            <!-- PKBuild Login Text Start -->
+            ~1~ PKBuild Login Text Start @1@
             <Border Background="{DynamicResource PrimaryTopbarBackground}">
                 <TextBlock Text="{Binding Message}" Margin="0 0 0 20" FontSize="15" Foreground="{DynamicResource PrimaryGridBackground}" HorizontalAlignment="Center"/>
             </Border>
-            <!-- PKBuild Login Text End -->
+            ~1~ PKBuild Login Text End @1@
             
-            <!-- PKBuild Login TextBoxes Start -->
+            ~1~ PKBuild Login TextBoxes Start @1@
             <StackPanel Margin="20">
                 <TextBlock Text="{Binding ErrMessage}" IsVisible="false"></TextBlock>
                 <TextBox x:Name="UsernameLoginBox" Margin="0 10 " Width="200" Watermark="Username" Text="{Binding Username}"></TextBox>
@@ -35,9 +63,9 @@
                 </Grid>
                 
             </StackPanel>
-            <!-- PKBuild Login TextBoxes End -->
+            ~1~ PKBuild Login TextBoxes End @1@
             
-            <!-- PKBuild Login Buttons Start -->
+            ~1~ PKBuild Login Buttons Start @1@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button>
                     <Label>Login</Label>
@@ -55,7 +83,7 @@
                     </Button>
                 </StackPanel>
             </Border>
-            <!-- PKBuild Login Buttons End -->
+            ~1~ PKBuild Login Buttons End @1@
         </StackPanel>
-    </Border>
+    </Border>-->
 </UserControl>

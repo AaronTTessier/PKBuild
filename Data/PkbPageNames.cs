@@ -9,5 +9,6 @@ public enum PkbPageNames
     Moves,
     Teams,
     Analysis,
-    Settings
+    Settings,
+    Login
 }

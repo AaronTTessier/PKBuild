@@ -11,7 +11,7 @@ using PKBuild.Factory;
 
 namespace PKBuild.ViewModels;
 
-public partial class LoginDialogViewModel : DialogViewModel
+public partial class LoginDialogViewModel : PkPageViewModel
 {
     private readonly DbFactory _dbFactory;
     
@@ -27,6 +27,8 @@ public partial class LoginDialogViewModel : DialogViewModel
     
     [ObservableProperty] private bool _confirmedLogin;
 
+    [ObservableProperty] private bool _hasError = false;
+
     [ObservableProperty] private string _username = "";
     
     [ObservableProperty] private string _password = "";
@@ -40,19 +42,5 @@ public partial class LoginDialogViewModel : DialogViewModel
     {
         _dbFactory = dbFactory;
     }*/
-    
-    [RelayCommand]
-    public void Login()
-    {
-        ConfirmedLogin = true;
-        CloseDialog();
-    }
-
-    [RelayCommand]
-    public void CancelLogin()
-    {
-        ConfirmedLogin = false;
-        CloseDialog();
-    }
     
 }

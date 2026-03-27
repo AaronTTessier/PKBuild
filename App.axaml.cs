@@ -30,6 +30,7 @@ public partial class App : Application
         collection.AddTransient<TeamsPageViewModel>();
         collection.AddTransient<AnalysisPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
+        collection.AddTransient<LoginDialogViewModel>();
 
         collection.AddSingleton<Func<PkbPageNames, PkPageViewModel>>(x => name => name switch
         {
@@ -40,6 +41,7 @@ public partial class App : Application
             PkbPageNames.Teams => x.GetRequiredService<TeamsPageViewModel>(),
             PkbPageNames.Analysis => x.GetRequiredService<AnalysisPageViewModel>(),
             PkbPageNames.Settings => x.GetRequiredService<SettingsPageViewModel>(),
+            PkbPageNames.Login => x.GetRequiredService<LoginDialogViewModel>(),
             _ => throw new InvalidOperationException(),
         });
         

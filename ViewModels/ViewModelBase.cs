@@ -2,7 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PKBuild.ViewModels;
 
-public class ViewModelBase : ObservableObject
+public class ViewModelBase : ObservableValidator
 {
     
 }

@@ -6,9 +6,8 @@
         Width="1400" Height="800"
         MinWidth="1400" MinHeight="800"
         Icon="/Assets/Images/icon.ico"
-        x:Class="PKBuild.MainWindowView"
+        x:Class="PKBuild.Views.MainWindowView"
         xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
-        xmlns:pkbview="clr-namespace:PKBuild.Views"
         x:DataType="pkbvm:MainWindowViewModel"
         Title="PKBuild">
         

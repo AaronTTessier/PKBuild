@@ -60,23 +60,34 @@
 
             <!-- Pokémon Image Row -->
             <Grid Grid.Row="0" Background="Chocolate">
-                <Image Source="/Assets/Images/pokeball.png" Height="200" Margin="20" />
+                <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
             </Grid>
 
             <!-- Pokémon Basic Information Input Row-->
-            <Grid Grid.Row="1" Background="CornflowerBlue">
-                <UniformGrid Columns="3" ColumnSpacing="30">
-                    <StackPanel Margin="20" Spacing="25">
-                        <TextBox Watermark="Pokemon name" />
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Select Species" IsEditable="True" MaxDropDownHeight="100" />
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
-                    </StackPanel>
+            <Grid Grid.Row="1">
+                <UniformGrid Columns="2" ColumnSpacing="100" Background="{DynamicResource PrimaryGridBackground}">
+                    <!-- TODO: Test if background looks better than rounded StackPanel boxes-->
+                    <Border Margin="10" BorderBrush="{DynamicResource PrimaryButton}" Background="Coral" BorderThickness="5" CornerRadius="30" ClipToBounds="True" VerticalAlignment="Center">
+                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <TextBox Margin="10" Watermark="Pokemon name"/>
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Select Species" IsEditable="True" MaxDropDownHeight="100" />
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
+                        </StackPanel>
+                    </Border>
+                    <!-- TODO: Test if background looks better than rounded StackPanel boxes-->
+                    <Border Margin="10" BorderBrush="{DynamicResource PrimaryButton}" Background="Coral" BorderThickness="5" CornerRadius="30" ClipToBounds="True" VerticalAlignment="Center">
+                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item"/>
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Ability" />
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" />
+                        </StackPanel>
+                    </Border>
                 </UniformGrid>
             </Grid>
 
             <!-- Pokémon Stats Information Input Row -->
             <Grid Grid.Row="2" Background="Brown">
-
+                
             </Grid>
         </Grid>
     </Grid>

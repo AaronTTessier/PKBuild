@@ -2,13 +2,12 @@ using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PKBuild.Data;
 using PKBuild.Factory;
-using PKBuild.Models;
 using PKBuild.Services;
 using PKBuild.ViewModels;
+using PKBuild.Views;
 
 namespace PKBuild;
 
@@ -23,10 +22,12 @@ public partial class App : Application
     {
         var collection = new ServiceCollection();
         collection.AddSingleton<MainWindowViewModel>();
+        collection.AddSingleton<MainWindowView>();
         collection.AddTransient<BoxPageViewModel>();
         collection.AddTransient<PokemonPageViewModel>();
         collection.AddTransient<ItemsPageViewModel>();
         collection.AddTransient<MovesPageViewModel>();
+        collection.AddTransient<TeamsPageView>();
         collection.AddTransient<TeamsPageViewModel>();
         collection.AddTransient<AnalysisPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
@@ -54,15 +55,14 @@ public partial class App : Application
         collection.AddSingleton<DbFactory>();
         
         var services = collection.BuildServiceProvider();
-        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new MainWindowView()
             {
-                DataContext = services.GetRequiredService<MainWindowViewModel>()
+                DataContext =  services.GetRequiredService<MainWindowViewModel>()
             };
         }
-
+        
         base.OnFrameworkInitializationCompleted();
     }
 }

@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace PKBuild;
+namespace PKBuild.Views;
 
 public partial class MainWindowView : Window
 {

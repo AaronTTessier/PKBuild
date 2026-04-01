@@ -38,11 +38,11 @@ public partial class MainWindowViewModel : ViewModelBase
     /// No-Parameter Constructor for Design-Time only
     /// TODO: Remove after finishing design
     /// </summary>
-    public MainWindowViewModel()
+    /*public MainWindowViewModel()
     {
         PkbCurrentPage = new TeamsPageViewModel();
-    }
-    /*public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
+    }*/
+    public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
         _dbFactory = dbFactory ?? throw new ArgumentNullException(nameof(dbFactory));
@@ -51,53 +51,29 @@ public partial class MainWindowViewModel : ViewModelBase
         dbContext.ApplyAllMigrations();
 
         ChangeToTeams();
-    }*/
-
-    [RelayCommand]
-    private void ChangeToLogin()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Login);
-    }
-    
-    [RelayCommand]
-    private void ChangeToBox()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Boxes);
     }
 
     [RelayCommand]
-    private void ChangeToPokemon()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Pokemon);
-    }
+    private void ChangeToLogin() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Login);
 
     [RelayCommand]
-    private void ChangeToItems()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Items);
-    }
+    private void ChangeToBox() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Boxes);
 
     [RelayCommand]
-    private void ChangeToMoves()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Moves);
-    }
+    private void ChangeToPokemon() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Pokemon);
 
     [RelayCommand]
-    private void ChangeToTeams()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Teams);
-    }
+    private void ChangeToItems() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Items);
 
     [RelayCommand]
-    private void ChangeToAnalysis()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Analysis);
-    }
+    private void ChangeToMoves() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Moves);
 
     [RelayCommand]
-    private void ChangeToSettings()
-    {
-        PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Settings);
-    }
+    private void ChangeToTeams() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Teams);
+
+    [RelayCommand]
+    private void ChangeToAnalysis() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Analysis);
+
+    [RelayCommand]
+    private void ChangeToSettings() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Settings);
 }

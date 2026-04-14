@@ -7,88 +7,87 @@
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
     <Design.DataContext>
-        <pkbvm:TeamsPageViewModel/>
+        <pkbvm:TeamsPageViewModel />
     </Design.DataContext>
-    <Grid RowDefinitions="Auto, *">
-        <!-- Pokémon Party Topbar -->
-        <UniformGrid Grid.Row="0" Columns="6" Background="MediumAquamarine">
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-
-            <Button HorizontalAlignment="Center" Width="150">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Image Source="/Assets/Images/pokeball.png" Width="50" />
-                    <Image Source="/Assets/Images/guardian.png" Width="25" />
-                </StackPanel>
-            </Button>
-        </UniformGrid>
-
-        <!-- Main Pokémon Editing Window -->
-        <Grid Grid.Row="1" RowDefinitions="Auto, *, *" Background="CadetBlue">
-
-            <!-- Pokémon Image Row -->
-            <Grid Grid.Row="0" Background="Chocolate">
-                <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
-            </Grid>
-
-            <!-- Pokémon Basic Information Input Row-->
-            <Grid Grid.Row="1">
-                <UniformGrid Columns="2" ColumnSpacing="100" Background="{DynamicResource PrimaryGridBackground}">
-                    <!-- TODO: Test if background looks better than rounded StackPanel boxes-->
-                    <Border Margin="10" BorderBrush="{DynamicResource PrimaryButton}" Background="Coral" BorderThickness="5" CornerRadius="30" ClipToBounds="True" VerticalAlignment="Center">
-                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                            <TextBox Margin="10" Watermark="Pokemon name"/>
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Select Species" IsEditable="True" MaxDropDownHeight="100" />
+    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="5" CornerRadius="2">
+        <Grid RowDefinitions="Auto, *">
+            <!-- Pokémon Party Topbar -->
+            <UniformGrid Grid.Row="0" ColumnSpacing="10" Columns="6" Background="{DynamicResource PrimaryTopbarBackground}">
+                <Button HorizontalAlignment="Center" Margin="5" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+    
+                <Button HorizontalAlignment="Center" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+    
+                <Button HorizontalAlignment="Center" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+    
+                <Button HorizontalAlignment="Center" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+    
+                <Button HorizontalAlignment="Center" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+    
+                <Button HorizontalAlignment="Center" Width="150">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                        <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                        <Image Source="/Assets/Images/guardian.png" Width="25" />
+                    </StackPanel>
+                </Button>
+            </UniformGrid>
+    
+            <!-- Main Pokémon Editing Window -->
+            <Grid Grid.Row="1" RowDefinitions="Auto, *, *">
+    
+                <!-- Pokémon Image Row -->
+                <Grid Grid.Row="0" Background="{DynamicResource PrimaryTopbarBackground}">
+                    <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
+                </Grid>
+    
+                <!-- Pokémon Basic Information Input Row-->
+                <Grid Grid.Row="1">
+                    <UniformGrid Columns="2" Background="{DynamicResource PrimaryTextForeground}">
+                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Center">
+                            <TextBox Margin="10" PlaceholderText="Pokemon name" />
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Select Species"
+                                      IsEditable="True" MaxDropDownHeight="100" />
                             <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
                         </StackPanel>
-                    </Border>
-                    <!-- TODO: Test if background looks better than rounded StackPanel boxes-->
-                    <Border Margin="10" BorderBrush="{DynamicResource PrimaryButton}" Background="Coral" BorderThickness="5" CornerRadius="30" ClipToBounds="True" VerticalAlignment="Center">
-                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item"/>
+                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Center">
+                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item" />
                             <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Ability" />
                             <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" />
                         </StackPanel>
-                    </Border>
-                </UniformGrid>
-            </Grid>
-
-            <!-- Pokémon Stats Information Input Row -->
-            <Grid Grid.Row="2" Background="Brown">
-                
+                    </UniformGrid>
+                </Grid>
+    
+                <!-- Pokémon Stats Information Input Row -->
+                <Grid Grid.Row="2" Background="{DynamicResource PrimaryGridBackground}">
+    
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </UserControl>

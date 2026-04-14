@@ -3,8 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
 using PKBuild.Factory;
-using PKBuild.Models;
-using PKBuild.Services;
+using PokeApiNet;
 
 namespace PKBuild.ViewModels;
 

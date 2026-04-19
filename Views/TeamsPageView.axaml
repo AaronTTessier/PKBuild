@@ -2,91 +2,151 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
+             mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
     <Design.DataContext>
         <pkbvm:TeamsPageViewModel />
     </Design.DataContext>
-    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="5" CornerRadius="2">
+    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
         <Grid RowDefinitions="Auto, *">
             <!-- Pokémon Party Topbar -->
-            <UniformGrid Grid.Row="0" ColumnSpacing="10" Columns="6" Background="{DynamicResource PrimaryTopbarBackground}">
-                <Button HorizontalAlignment="Center" Margin="5" Width="150">
+            <UniformGrid Grid.Row="0" Columns="6" Background="{DynamicResource PrimaryTopbarBackground}">
+                <Button HorizontalAlignment="Center" Margin="5" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
-    
-                <Button HorizontalAlignment="Center" Width="150">
+
+                <Button HorizontalAlignment="Center" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
-    
-                <Button HorizontalAlignment="Center" Width="150">
+
+                <Button HorizontalAlignment="Center" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
-    
-                <Button HorizontalAlignment="Center" Width="150">
+
+                <Button HorizontalAlignment="Center" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
-    
-                <Button HorizontalAlignment="Center" Width="150">
+
+                <Button HorizontalAlignment="Center" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
-    
-                <Button HorizontalAlignment="Center" Width="150">
+
+                <Button HorizontalAlignment="Center" Width="144">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                         <Image Source="/Assets/Images/pokeball.png" Width="50" />
                         <Image Source="/Assets/Images/guardian.png" Width="25" />
                     </StackPanel>
                 </Button>
             </UniformGrid>
-    
+
             <!-- Main Pokémon Editing Window -->
-            <Grid Grid.Row="1" RowDefinitions="Auto, *, *">
-    
+            <Grid Grid.Row="1" RowDefinitions="Auto, *, *" ColumnDefinitions="*, *">
+
                 <!-- Pokémon Image Row -->
-                <Grid Grid.Row="0" Background="{DynamicResource PrimaryTopbarBackground}">
+                <Grid Grid.Column="0" Grid.Row="0" ColumnSpan="2"
+                      Background="{DynamicResource PrimaryTopbarBackground}">
                     <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
                 </Grid>
-    
+
                 <!-- Pokémon Basic Information Input Row-->
-                <Grid Grid.Row="1">
-                    <UniformGrid Columns="2" Background="{DynamicResource PrimaryTextForeground}">
-                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Center">
-                            <TextBox Margin="10" PlaceholderText="Pokemon name" />
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Select Species"
-                                      IsEditable="True" MaxDropDownHeight="100" />
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
-                        </StackPanel>
-                        <StackPanel Background="{DynamicResource PrimaryButton}" HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Center">
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item" />
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Ability" />
-                            <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" />
-                        </StackPanel>
+                <Grid Grid.Column="0" Grid.Row="1" Background="{DynamicResource PrimaryGridBackground}">
+                    <UniformGrid Columns="2" Rows="3">
+                        <TextBox Margin="10" PlaceholderText="Pokemon name" VerticalAlignment="Center" />
+
+                        <ComboBox Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  PlaceholderText="Select Species"
+                                  IsEditable="True" MaxDropDownHeight="100" />
+
+                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
+
+                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item" />
+
+                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Ability" />
+
+                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" />
                     </UniformGrid>
                 </Grid>
-    
+
                 <!-- Pokémon Stats Information Input Row -->
-                <Grid Grid.Row="2" Background="{DynamicResource PrimaryGridBackground}">
-    
+                <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Stretch"
+                      Background="{DynamicResource PrimaryGridBackground}">
+                    <!-- Move Selection Input -->
+                    <UniformGrid Columns="2" Rows="2" VerticalAlignment="Stretch">
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
+                                  IsEditable="True" PlaceholderText="Move 1" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
+                                  IsEditable="True" PlaceholderText="Move 2" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
+                                  IsEditable="True" PlaceholderText="Move 3" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
+                                  IsEditable="True" PlaceholderText="Move 4" />
+                    </UniformGrid>
                 </Grid>
+
+                <!-- Stats Selection Input -->
+                <!-- Defaults to main games lineup (e.g., Scarlet/Violet, Sword/Shield), not Champions -->
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical"
+                            Background="{DynamicResource PrimaryGridBackground}">
+                    <UniformGrid Columns="3" Rows="13" VerticalAlignment="Stretch" Margin="10 0">
+                        <TextBlock Text="Stats" VerticalAlignment="Center" />
+                        <TextBlock Text="EVs" VerticalAlignment="Center" />
+                        <TextBlock Text="Total" VerticalAlignment="Center" />
+
+                        <TextBlock Text="HP" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderHp" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4"/>
+                        <TextBlock Text="{Binding #SliderHp.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+
+                        <TextBlock Text="Attack" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderAtk" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4" />
+                        <TextBlock Text="{Binding #SliderAtk.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+
+                        <TextBlock Text="Defense" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderDef" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4" />
+                        <TextBlock Text="{Binding #SliderDef.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+
+                        <TextBlock Text="Special Attack" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderSpA" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4" />
+                        <TextBlock Text="{Binding #SliderSpA.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+
+                        <TextBlock Text="Special Defense" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderSpDef" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4" />
+                        <TextBlock Text="{Binding #SliderSpDef.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+
+                        <TextBlock Text="Speed" VerticalAlignment="Center" />
+                        <Slider x:Name="SliderSpe" Minimum="0" Maximum="255" TickFrequency="4"
+                                IsSnapToTickEnabled="True" SmallChange="4" />
+                        <TextBlock Text="{Binding #SliderSpe.Value}" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" />
+                    </UniformGrid>
+                </StackPanel>
             </Grid>
         </Grid>
     </Border>

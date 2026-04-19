@@ -37,11 +37,11 @@ public partial class MainWindowViewModel : ViewModelBase
     /// No-Parameter Constructor for Design-Time only
     /// TODO: Remove after finishing design
     /// </summary>
-    /*public MainWindowViewModel()
+    public MainWindowViewModel()
     {
         PkbCurrentPage = new TeamsPageViewModel();
-    }*/
-    public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
+    }
+    /*public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
         _dbFactory = dbFactory ?? throw new ArgumentNullException(nameof(dbFactory));
@@ -50,7 +50,7 @@ public partial class MainWindowViewModel : ViewModelBase
         dbContext.ApplyAllMigrations();
 
         ChangeToTeams();
-    }
+    }*/
 
     [RelayCommand]
     private void ChangeToLogin() => PkbCurrentPage = _pageFactory.GetPkPageViewModel(PkbPageNames.Login);

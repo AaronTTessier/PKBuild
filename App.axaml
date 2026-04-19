@@ -13,6 +13,7 @@
         <FluentTheme />
         <StyleInclude Source="Styles/AppDefaultStyles.axaml"></StyleInclude>
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+        
     </Application.Styles>
     
     <Application.Resources>
@@ -28,5 +29,7 @@
         <SolidColorBrush x:Key="ButtonPointerOver">#767676</SolidColorBrush>
         <SolidColorBrush x:Key="ActiveButton">#8F322A</SolidColorBrush>
         <SolidColorBrush x:Key="ActiveFont">#CDCDCD</SolidColorBrush>
+        
+
     </Application.Resources>
 </Application>

@@ -15,7 +15,7 @@
             
             <TextBlock>Move Search</TextBlock>
             
-            <TextBox Watermark="Search for moves..." Foreground="Black" CaretBrush="Black"/>
+            <TextBox PlaceholderText="Search for moves..." Foreground="Black" CaretBrush="Black"/>
         </StackPanel>
         <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
             <DataGrid ScrollViewer.VerticalScrollBarVisibility="Visible"/>

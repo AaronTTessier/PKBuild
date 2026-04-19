@@ -1,21 +1,15 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
-        <Border Padding="20">
+        <Border Padding="20" Background="White">
             <!-- Add Controls for Previewer Here -->
-            <!--<Grid>
-                <Button Content="Hello World"/>
-            </Grid>-->
-            <ComboBox x:Name="ComboBoxPokemonNames">
+            <Slider Width="200">
                 
-            </ComboBox>
+            </Slider>
         </Border>
     </Design.PreviewWith>
 
     <!-- Add Styles Here -->
-    <Style Selector="Grid">
-         <Setter Property="Background" Value="{DynamicResource PrimaryGridBackground}"/> 
-    </Style>
     
     <Style Selector="Grid.Topbar">
         <Setter Property="Background" Value="{DynamicResource PrimaryTopbarBackground}"/>
@@ -86,4 +80,5 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextForeground}"/>
     </Style>
     
+
 </Styles>

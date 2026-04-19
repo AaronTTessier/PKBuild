@@ -2,13 +2,14 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
 using PKBuild.Models;
+using PKBuild.Views;
 
 namespace PKBuild.ViewModels;
 
 public partial class TeamsPageViewModel : PkPageViewModel
 {
     private ObservableCollection<PokemonPageModel>? _pokemon;
-
+    
     public ObservableCollection<PokemonPageModel>? Pokemon
     {
         get => _pokemon;

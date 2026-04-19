@@ -15,7 +15,7 @@
             
             <TextBlock>Item Search</TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBox Watermark="Search for items..." Foreground="Black" CaretBrush="Black" Width="250"/>
+                <TextBox PlaceholderText="Search for items..." Foreground="Black" CaretBrush="Black" Width="250"/>
                 <Button x:Name="SearchItemBtn" Width="90" HorizontalContentAlignment="Center" Command="{Binding SearchTestCommand}">
                     <Label>Search</Label>
                 </Button>

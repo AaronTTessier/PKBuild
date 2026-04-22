@@ -86,7 +86,6 @@
                                                                 <Label Content="Analysis"/>
                                                         </StackPanel>
                                                 </Button>
-                                                <Slider></Slider>
                                         </StackPanel>
                                         
                                         <Button Grid.Row="1" Height="50" Content="Settings" HorizontalAlignment="Stretch" Classes.active="{Binding SettingsPageActiveButton}" Command="{Binding ChangeToSettingsCommand}" VerticalContentAlignment="Center"/>

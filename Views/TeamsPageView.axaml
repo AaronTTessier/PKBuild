@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
-             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
@@ -103,50 +102,50 @@
 
                 <!-- Stats Selection Input -->
                 <!-- Defaults to main games lineup (e.g., Scarlet/Violet, Sword/Shield), not Champions -->
-                <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical"
+                <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch"
                             Background="{DynamicResource PrimaryGridBackground}">
-                    <UniformGrid Columns="3" Rows="13" VerticalAlignment="Stretch" Margin="10 0">
-                        <TextBlock Text="Stats" VerticalAlignment="Center" />
-                        <TextBlock Text="EVs" VerticalAlignment="Center" />
-                        <TextBlock Text="Total" VerticalAlignment="Center" />
+                    <Grid RowDefinitions="Auto, *, *, *, *, *, *" Grid.ColumnDefinitions="*, *, *" VerticalAlignment="Stretch" Margin="0 10">
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Stats" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="EVs" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Total" VerticalAlignment="Center" />
 
-                        <TextBlock Text="HP" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderHp" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="HP" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="1" x:Name="SliderHp" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4"/>
-                        <TextBlock Text="{Binding #SliderHp.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding #SliderHp.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
 
-                        <TextBlock Text="Attack" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderAtk" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Attack" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="2" x:Name="SliderAtk" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Text="{Binding #SliderAtk.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding #SliderAtk.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
 
-                        <TextBlock Text="Defense" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderDef" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Defense" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="3" x:Name="SliderDef" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Text="{Binding #SliderDef.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding #SliderDef.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
 
-                        <TextBlock Text="Special Attack" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderSpA" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Special Attack" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="4" x:Name="SliderSpA" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Text="{Binding #SliderSpA.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding #SliderSpA.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
 
-                        <TextBlock Text="Special Defense" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderSpDef" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="5" Text="Special Defense" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="5" x:Name="SliderSpDef" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Text="{Binding #SliderSpDef.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding #SliderSpDef.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
 
-                        <TextBlock Text="Speed" VerticalAlignment="Center" />
-                        <Slider x:Name="SliderSpe" Minimum="0" Maximum="255" TickFrequency="4"
+                        <TextBlock Grid.Column="0" Grid.Row="6" Text="Speed" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1" Grid.Row="6" x:Name="SliderSpe" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
                                 IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Text="{Binding #SliderSpe.Value}" VerticalAlignment="Center"
+                        <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding #SliderSpe.Value}" VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
-                    </UniformGrid>
-                </StackPanel>
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     </Border>

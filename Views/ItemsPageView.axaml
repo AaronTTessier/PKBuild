@@ -2,71 +2,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:ItemsPageViewModel"
              x:Class="PKBuild.Views.ItemsPageView"
              Foreground="Black">
-    <Design.DataContext><pkbvm:ItemsPageViewModel></pkbvm:ItemsPageViewModel></Design.DataContext>
-    
-    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
-        <!-- Left Side Content: Items Box -->
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20">
-            
-            <TextBlock>Item Search</TextBlock>
-            <StackPanel Orientation="Horizontal">
-                <TextBox PlaceholderText="Search for items..." Foreground="Black" CaretBrush="Black" Width="250"/>
-                <Button x:Name="SearchItemBtn" Width="90" HorizontalContentAlignment="Center" Command="{Binding SearchTestCommand}">
-                    <Label>Search</Label>
-                </Button>
+    <Design.DataContext>
+        <pkbvm:ItemsPageViewModel></pkbvm:ItemsPageViewModel>
+    </Design.DataContext>
+
+    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
+        <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
+            <!-- Left Side Content: Items Box -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="6" HorizontalAlignment="Center">
+                <TextBlock>Item Search</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox PlaceholderText="Search for items..." Width="250" />
+                    <Button x:Name="SearchItemBtn" Width="90" HorizontalContentAlignment="Center"
+                            Command="{Binding SearchTestCommand}">
+                        <Label>Search</Label>
+                    </Button>
+                </StackPanel>
             </StackPanel>
-            
-            
-        </StackPanel>
-        <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
-            <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="20" ItemsSource=""/>
-        </Border>
-        
-        <!-- Right Side Content: Items Description and Buttons-->
-        <Grid Grid.Column="1" Grid.Row="0" ColumnDefinitions="Auto, Auto" RowDefinitions="*" Margin="20 20 0 0">
-            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                <TextBlock>Test</TextBlock>
-                
-                <ComboBox x:Name="ComboBoxPokemon" ItemsSource="">
-                
-                </ComboBox>
+
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
+                    BorderThickness="3" CornerRadius="2" Margin="6">
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="" />
+            </Border>
+
+            <!-- Right Side Content: Items Description and Buttons-->
+            <StackPanel Grid.Column="1" Grid.Row="0" Margin="6" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>Items</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="ComboBoxPokemon" ItemsSource="" VerticalAlignment="Center" />
+                        <Button>
+                            <Label>Add Item</Label>
+                        </Button>
+
+                        <Button>
+                            <Label>Delete Item</Label>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            
-            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Margin="15 -5 0 0">
-                <Button>
-                    <Label>Add Item</Label>
-                </Button>
-            
-                <Button>
-                    <Label>Delete Item</Label>
-                </Button>
-            </StackPanel>
-            
+
+
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
+                    BorderThickness="3" CornerRadius="2" Margin="6">
+                <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *">
+                        <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
+                        <Label Grid.Column="1" Grid.Row="0" Margin="6">Description</Label>
+                        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black"
+                                BorderThickness="2"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">Test</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Margin="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at magna mauris. Fusce ac nisl ut nunc pellentesque tincidunt. Pellentesque hendrerit tortor sit amet finibus. </TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Border>
         </Grid>
-            
-        
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
-            
-            <StackPanel Orientation="Vertical" Margin="10" Spacing="5">
-                <Label>Item</Label>
-                
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *">
-                    <Label Grid.Column="0" Grid.Row="0">Name</Label>
-                    <Label Grid.Column="1" Grid.Row="0">Description</Label>
-                    
-                    <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="2"/>
-                    
-                    <TextBlock Grid.Column="0" Grid.Row="2">Test</TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at magna mauris. Fusce ac nisl ut nunc pellentesque tincidunt. Pellentesque hendrerit tortor sit amet finibus. </TextBlock>
-                    
-                </Grid>
-            </StackPanel>
-        </Border>
-        
-    </Grid>
+    </Border>
 </UserControl>

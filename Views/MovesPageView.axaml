@@ -2,43 +2,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:MovesPageViewModel"
              x:Class="PKBuild.Views.MovesPageView"
              Foreground="Black">
     <Design.DataContext><pkbvm:MovesPageViewModel></pkbvm:MovesPageViewModel></Design.DataContext>
     
-    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
-        <!-- Left Side Content: Items Box -->
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20">
-            
-            <TextBlock>Move Search</TextBlock>
-            
-            <TextBox PlaceholderText="Search for moves..." Foreground="Black" CaretBrush="Black"/>
-        </StackPanel>
-        <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
-            <DataGrid ScrollViewer.VerticalScrollBarVisibility="Visible"/>
-        </Border>
-        <!-- Right Side Content: Items Description and Buttons-->
-        <Grid Grid.Column="1" Grid.Row="0" ColumnDefinitions="Auto, Auto" RowDefinitions="*" Margin="20">
-            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-                <TextBlock>Current Pokemon:</TextBlock>
-                
-                <ComboBox x:Name="ComboBoxPokemonNames">
-                
-                </ComboBox>
+    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
+        <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
+            <!-- Left Side Content: Items Box -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="6" HorizontalAlignment="Center">
+                <TextBlock>Move Search</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox PlaceholderText="Search for moves..." Width="250" />
+                    <Button x:Name="SearchMoveBtn" Width="90" HorizontalContentAlignment="Center">
+                        <Label>Search</Label>
+                    </Button>
+                </StackPanel>
             </StackPanel>
-            
+
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
+                    BorderThickness="3" CornerRadius="2" Margin="6">
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="" />
+            </Border>
+
+            <!-- Right Side Content: Move Description and Buttons-->
+            <StackPanel Grid.Column="1" Grid.Row="0" Margin="6" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>Pokemon</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="ComboBoxPokemon" ItemsSource="" VerticalAlignment="Center" />
+                        <Button>
+                            <Label>Add Move</Label>
+                        </Button>
+
+                        <Button>
+                            <Label>Forget Move</Label>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
+                    BorderThickness="3" CornerRadius="2" Margin="6">
+                <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
+                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="*, *, *">
+                        <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
+                        <Label Grid.Column="1" Grid.Row="0" Margin="6">Type</Label>
+                        <Label Grid.Column="2" Grid.Row="0" Margin="6">Power</Label>
+                        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="Black"
+                                BorderThickness="2"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">?MOVENAME?</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Margin="6">?MOVETYPE?</TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="2" Margin="6">?MOVEPOWER?</TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Border>
         </Grid>
-            
-        
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="3" CornerRadius="3" Margin="20 25">
-            
-            <DataGrid>
-                
-            </DataGrid>
-        </Border>
-        
-    </Grid>
+    </Border>
 </UserControl>

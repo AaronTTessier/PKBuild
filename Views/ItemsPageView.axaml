@@ -33,7 +33,7 @@
             <!-- Right Side Content: Items Description and Buttons-->
             <StackPanel Grid.Column="1" Grid.Row="0" Margin="6" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock>Items</TextBlock>
+                    <TextBlock>Pokemon</TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox x:Name="ComboBoxPokemon" ItemsSource="" VerticalAlignment="Center" />
                         <Button>

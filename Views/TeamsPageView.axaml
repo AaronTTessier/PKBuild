@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
+             xmlns:local="clr-namespace:PKBuild.Data"
              Background="{DynamicResource PrimaryGridBackground}"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
@@ -64,7 +65,7 @@
                       Background="{DynamicResource PrimaryTopbarBackground}">
                     <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
                 </Grid>
-                
+
                 <!-- Pokémon Basic Information Input Row-->
                 <GroupBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"
                           Background="{DynamicResource PrimaryGridBackground}" Margin="10">
@@ -78,9 +79,20 @@
                         <!-- Pokémon Stats Information Input Row -->
                         <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5" />
 
-                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}" DisplayMemberBinding="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}" SelectedItem="{Binding SelectedPokemon}"
+                                  VerticalAlignment="Center" HorizontalAlignment="Stretch"
                                   PlaceholderText="Select Pokemon"
                                   IsEditable="True" MaxDropDownHeight="100" IsTextSearchEnabled="True" Margin="5">
+                            
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding name}" FontFamily="{DynamicResource LexendRegular}" FontWeight="Bold"></TextBlock>
+                                        <Image Source="/Assets/Images/pokeball.png" Height="20"/>
+                                    </StackPanel>
+                                    
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
 
                         <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Shiny" Margin="5" />
@@ -123,14 +135,14 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Stats" VerticalAlignment="Center" />
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="EVs" VerticalAlignment="Center" />
                             <TextBlock Grid.Row="0" Grid.Column="2" Text="Total" VerticalAlignment="Center" />
-                            
-                            <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"/>
-                            
+
+                            <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" />
+
                             <TextBlock Grid.Column="0" Grid.Row="2" Text="HP" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="2" x:Name="SliderHp" VerticalAlignment="Center"
                                     Minimum="0"
                                     Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[0]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[0]}" />
                             <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding PokemonEvs[0]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -139,7 +151,7 @@
                             <Slider Grid.Column="1" Grid.Row="3" x:Name="SliderAtk" VerticalAlignment="Center"
                                     Minimum="0"
                                     Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[1]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[1]}" />
                             <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding PokemonEvs[1]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -148,7 +160,7 @@
                             <Slider Grid.Column="1" Grid.Row="4" x:Name="SliderDef" VerticalAlignment="Center"
                                     Minimum="0"
                                     Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[2]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[2]}" />
                             <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding PokemonEvs[2]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -157,7 +169,7 @@
                             <Slider Grid.Column="1" Grid.Row="5" x:Name="SliderSpA" VerticalAlignment="Center"
                                     Minimum="0"
                                     Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[3]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[3]}" />
                             <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding PokemonEvs[3]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -165,7 +177,7 @@
                             <TextBlock Grid.Column="0" Grid.Row="6" Text="Special Defense" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="6" x:Name="SliderSpDef" VerticalAlignment="Center"
                                     Minimum="0" Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[4]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[4]}" />
                             <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding PokemonEvs[4]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -174,7 +186,7 @@
                             <Slider Grid.Column="1" Grid.Row="7" x:Name="SliderSpe" VerticalAlignment="Center"
                                     Minimum="0"
                                     Maximum="255" TickFrequency="4"
-                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[5]}"/>
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[5]}" />
                             <TextBlock Grid.Column="2" Grid.Row="7" Text="{Binding PokemonEvs[5]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />

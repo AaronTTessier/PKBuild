@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
@@ -14,7 +13,8 @@ public partial class TeamsPageViewModel : PkPageViewModel
 {
     public ObservableCollection<PokemonPageModel>? PokemonTeamList;
 
-    private Root? PokedexList { get; }
+    [ObservableProperty]
+    private Root? _pokedexList;
 
     [ObservableProperty]
     private Pokemon? _selectedPokemon;

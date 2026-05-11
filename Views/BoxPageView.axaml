@@ -5,241 +5,231 @@
              mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
              x:DataType="pkbvm:BoxPageViewModel"
-             Foreground="Black"
              Background="{DynamicResource PrimaryGridBackground}"
              x:Class="PKBuild.Views.BoxPageView">
     <Design.DataContext>
         <pkbvm:BoxPageViewModel></pkbvm:BoxPageViewModel>
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto, *">
-        <Label Grid.Row="0" Background="Gray">Team Name</Label>
+    <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
+        <Grid ColumnDefinitions="260, *, 400" Margin="20" ColumnSpacing="20">
+            <!-- Current Pokemon Team Column Start -->
+            <GroupBox Grid.Column="0">
+                <GroupBox.Header>
+                    <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
+                        <TextBlock Text="Team" Foreground="{DynamicResource PrimaryTextForeground}"
+                                   FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" />
+                    </Border>
+                </GroupBox.Header>
 
-        <Grid Grid.Row="1">
-            <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *" Margin="5">
-                <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            
-                            <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                <UniformGrid Rows="6" Margin="10">
+                    <!-- TODO: Finish styling for Pokemon Team column -->
+                    <Button HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
-                    </Border>
-                </StackPanel>
-                
-                <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                    </Button>
+
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
-                    </Border>
-                </StackPanel>
-                
-                <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                    </Button>
+
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
-                    </Border>
-                </StackPanel>
-                
-                <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                    </Button>
+
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
-                    </Border>
-                </StackPanel>
-                
-                <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                    </Button>
+
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
-                    </Border>
-                </StackPanel>
-                
-                <StackPanel Grid.Row="1" Grid.Column="2" Margin="5">
-                    <Border BorderBrush="Black" CornerRadius="3" BorderThickness="2">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"
-                                    Background="{DynamicResource PrimaryTopbarBackground}">
-                            <Image Source="/Assets/Images/shield-64.png" Width="100" />
-                            <TextBlock Foreground="White" HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" Margin="0 10">
-                                Pokemon Alpha
-                            </TextBlock>
-                            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
-                                  Background="{DynamicResource PrimaryGridBackground}">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="Black">HP:</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="Black">ATK:</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Foreground="Black">DEF:</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Foreground="Black">SpA:</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="0" Foreground="Black">SpD:</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="0" Foreground="Black">SPE:</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="1" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Foreground="Black">000</TextBlock>
-                                <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                    <TextBlock>Edit Pokemon</TextBlock>
-                                </Button>
-                            </Grid>
+                    </Button>
+
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                            <Image Source="/Assets/Images/pokeball.png" Width="50" />
+                            <Image Source="/Assets/Images/guardian.png" Width="25" />
                         </StackPanel>
+                    </Button>
+                </UniformGrid>
+            </GroupBox>
+            <!-- Current Pokemon Team Column End -->
+
+            <!-- Box Column Start -->
+            <GroupBox Grid.Column="1">
+                <GroupBox.Header>
+                    <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
+                        <TextBlock Text="Pokemon Box" Foreground="{DynamicResource PrimaryTextForeground}"
+                                   FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" />
                     </Border>
-                </StackPanel>
-            </Grid>
+                </GroupBox.Header>
+                <Panel>
+                    <ScrollViewer>
+                        <ItemsControl ItemsSource="{Binding PokemonArrTest}"
+                                      IsVisible="{Binding PokemonArrTest?.Count}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="6" VerticalAlignment="Top" ColumnSpacing="4" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="2" CornerRadius="6"
+                                            Background="#f0f0f0">
+                                        <Button>
+                                            <Image Source="/Assets/Images/pokeball.png" Stretch="Uniform" />
+                                        </Button>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                IsVisible="{Binding !PokemonArrTest.Count}">
+                        <TextBlock Text="No Pokemon found." Foreground="Gray" />
+                    </StackPanel>
+                </Panel>
+            </GroupBox>
+            <!-- Box Column End -->
+
+            <!-- Pokemon Summary Column Start -->
+            <GroupBox Grid.Column="2" VerticalAlignment="Stretch">
+                <GroupBox.Header>
+                    <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
+                        <TextBlock Text="Summary" Foreground="{DynamicResource PrimaryTextForeground}"
+                                   FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" />
+                    </Border>
+                </GroupBox.Header>
+                <ScrollViewer>
+                    <StackPanel Spacing="10">
+                        <!-- TODO: Fix styling for Summary column -->
+                        <!-- Name, Pokeball, and Gender -->
+                        <Grid ColumnDefinitions="*, *">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="25">
+                                <Image Source="/Assets/Images/pokeball.png" Height="30" />
+                                <TextBlock Text="?NAME?" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <Image Grid.Column="1" HorizontalAlignment="Right" Source="/Assets/Images/pokeball.png"
+                                   Height="30" />
+                        </Grid>
+
+                        <!-- Species Name -->
+                        <TextBlock Text="?SPECIES?" />
+
+                        <!-- Type Icon -->
+                        <Image Source="/Assets/Images/NormalIC_ZA.png" Height="36" HorizontalAlignment="Left" />
+
+                        <!-- Stats Grid -->
+                        <Grid ColumnDefinitions="Auto, Auto, *, Auto, *, Auto" RowDefinitions="*, *, *, *, *, *"
+                              VerticalAlignment="Stretch" ShowGridLines="True">
+                            <Image Grid.Column="0" Grid.Row="0" Source="/Assets/Images/HP_icon_HOME.png" Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="HP" />
+                            <TextBlock Grid.Column="2" Grid.Row="0" Text="x" Background="Brown" />
+                            <TextBlock Grid.Column="3" Grid.Row="0" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="0" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="0" Text="---" />
+
+                            <Image Grid.Column="0" Grid.Row="1" Source="/Assets/Images/Attack_icon_HOME.png"
+                                   Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Attack" />
+                            <TextBlock Grid.Column="2" Grid.Row="1" Text="x" />
+                            <TextBlock Grid.Column="3" Grid.Row="1" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="1" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="1" Text="---" />
+
+                            <Image Grid.Column="0" Grid.Row="2" Source="/Assets/Images/Defense_icon_HOME.png"
+                                   Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Defense" />
+                            <TextBlock Grid.Column="2" Grid.Row="2" Text="x" />
+                            <TextBlock Grid.Column="3" Grid.Row="2" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="2" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="2" Text="---" />
+
+                            <Image Grid.Column="0" Grid.Row="3" Source="/Assets/Images/Special_Attack_icon_HOME.png"
+                                   Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Text="Special Attack" />
+                            <TextBlock Grid.Column="2" Grid.Row="3" Text="x" />
+                            <TextBlock Grid.Column="3" Grid.Row="3" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="3" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="3" Text="---" />
+
+                            <Image Grid.Column="0" Grid.Row="4" Source="/Assets/Images/Special_Defense_icon_HOME.png"
+                                   Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="4" Text="Special Defense" />
+                            <TextBlock Grid.Column="2" Grid.Row="4" Text="x" />
+                            <TextBlock Grid.Column="3" Grid.Row="4" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="4" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="4" Text="---" />
+
+                            <Image Grid.Column="0" Grid.Row="5" Source="/Assets/Images/Speed_icon_HOME.png" Height="35" />
+                            <TextBlock Grid.Column="1" Grid.Row="5" Text="Speed" />
+                            <TextBlock Grid.Column="2" Grid.Row="5" Text="x" />
+                            <TextBlock Grid.Column="3" Grid.Row="5" Text="---" />
+                            <ProgressBar Grid.Column="4" Grid.Row="5" MinWidth="10" Width="80" />
+                            <TextBlock Grid.Column="5" Grid.Row="5" Text="---" />
+                        </Grid>
+
+                        <!-- Moves Stackpanel -->
+                        <StackPanel Margin="0 10 0 0">
+                            <UniformGrid Columns="3" Rows="4" RowSpacing="5">
+                                <!-- Move 1 -->
+                                <Image Grid.Column="0" Grid.Row="0" Source="/Assets/Images/Normal_icon_SV.png"
+                                       Height="35" />
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="?MOVENAME?" HorizontalAlignment="Stretch"
+                                           Background="Chocolate" />
+                                <TextBlock Grid.Column="2" Grid.Row="0" Background="Brown" Text="?PP?"
+                                           HorizontalAlignment="Center" />
+
+                                <!-- Move 2 -->
+                                <Image Grid.Column="0" Grid.Row="1" Source="/Assets/Images/Normal_icon_SV.png"
+                                       Height="35" />
+                                <TextBlock Grid.Column="1" Grid.Row="1" Text="?MOVENAME?" HorizontalAlignment="Stretch"
+                                           Background="Chocolate" />
+                                <TextBlock Grid.Column="2" Grid.Row="1" Background="Brown" Text="?PP?"
+                                           HorizontalAlignment="Center" />
+
+                                <!-- Move 3 -->
+                                <Image Grid.Column="0" Grid.Row="2" Source="/Assets/Images/Normal_icon_SV.png"
+                                       Height="35" />
+                                <TextBlock Grid.Column="1" Grid.Row="2" Text="?MOVENAME?" HorizontalAlignment="Stretch"
+                                           Background="Chocolate" />
+                                <TextBlock Grid.Column="2" Grid.Row="2" Background="Brown" Text="?PP?"
+                                           HorizontalAlignment="Center" />
+
+                                <!-- Move 4 -->
+                                <Image Grid.Column="0" Grid.Row="3" Source="/Assets/Images/Normal_icon_SV.png"
+                                       Height="35" />
+                                <TextBlock Grid.Column="1" Grid.Row="3" Text="?MOVENAME?" HorizontalAlignment="Stretch"
+                                           Background="Chocolate" />
+                                <TextBlock Grid.Column="2" Grid.Row="3" Background="Brown" Text="?PP?"
+                                           HorizontalAlignment="Center" />
+                            </UniformGrid>
+                        </StackPanel>
+
+                        <!-- Ability Panel -->
+                        <UniformGrid Columns="2" HorizontalAlignment="Center" Background="CornflowerBlue">
+                            <TextBlock Text="Ability" HorizontalAlignment="Center" />
+                            <TextBlock Text="?ABILITYNAME?" HorizontalAlignment="Center" />
+                        </UniformGrid>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+            <!-- Pokemon Summary Column End -->
         </Grid>
-    </Grid>
+    </Border>
 </UserControl>

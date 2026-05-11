@@ -17,7 +17,7 @@
             <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="6" HorizontalAlignment="Center">
                 <TextBlock>Item Search</TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox PlaceholderText="Search for items..." Width="250" />
+                    <TextBox x:Name="ItemSearchTextBox" PlaceholderText="Search for items..." Width="250" />
                     <Button x:Name="SearchItemBtn" Width="90" HorizontalContentAlignment="Center"
                             Command="{Binding SearchTestCommand}">
                         <Label>Search</Label>
@@ -25,11 +25,18 @@
                 </StackPanel>
             </StackPanel>
 
-            <Border Grid.Column="0" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
-                    BorderThickness="3" CornerRadius="2" Margin="6">
-                <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="" />
-            </Border>
-
+            <Panel Grid.Column="0" Grid.Row="1">
+                <Border BorderBrush="{DynamicResource PrimaryTextForeground}"
+                        BorderThickness="3" CornerRadius="2" Margin="6">
+                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="" />
+                </Border>
+                
+                <!-- TODO: Add visibility status to Viewmodel -->
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="False">
+                    <TextBlock Foreground="Gray" Text="Search for items."/>
+                </StackPanel>
+            </Panel>
+            
             <!-- Right Side Content: Items Description and Buttons-->
             <StackPanel Grid.Column="1" Grid.Row="0" Margin="6" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical">
@@ -48,18 +55,25 @@
             </StackPanel>
 
 
+            <!-- TODO: Add "No Item Selected" Message during Viewmodel completion -->
             <Border Grid.Column="1" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
                     BorderThickness="3" CornerRadius="2" Margin="6">
-                <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
-                    <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *">
-                        <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
-                        <Label Grid.Column="1" Grid.Row="0" Margin="6">Description</Label>
-                        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black"
-                                BorderThickness="2"/>
-                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">Test</TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Margin="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at magna mauris. Fusce ac nisl ut nunc pellentesque tincidunt. Pellentesque hendrerit tortor sit amet finibus. </TextBlock>
-                    </Grid>
-                </StackPanel>
+                <Panel>
+                    <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="*, *, *">
+                            <!-- TODO: Introduce logic for changing textblocks on SelectedItem change -->
+                            <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
+                            <Label Grid.Column="1" Grid.Row="0" Margin="6">Description</Label>
+                            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black"
+                                    BorderThickness="2" />
+                            <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">Test</TextBlock>
+                            <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Margin="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at magna mauris. Fusce ac nisl ut nunc pellentesque tincidunt. Pellentesque hendrerit tortor sit amet finibus. </TextBlock>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="False">
+                        <TextBlock Text="No Pokemon found." Foreground="Gray" />
+                    </StackPanel>
+                </Panel>
             </Border>
         </Grid>
     </Border>

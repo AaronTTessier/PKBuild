@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
+             Background="{DynamicResource PrimaryGridBackground}"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
     <Design.DataContext>
@@ -58,94 +59,128 @@
 
             <!-- Main Pokémon Editing Window -->
             <Grid Grid.Row="1" RowDefinitions="Auto, *, *" ColumnDefinitions="*, *">
-
                 <!-- Pokémon Image Row -->
                 <Grid Grid.Column="0" Grid.Row="0" ColumnSpan="2"
                       Background="{DynamicResource PrimaryTopbarBackground}">
                     <Image Source="/Assets/Images/pokeball.png" Height="165" Margin="20" />
                 </Grid>
-
+                
                 <!-- Pokémon Basic Information Input Row-->
-                <Grid Grid.Column="0" Grid.Row="1" Background="{DynamicResource PrimaryGridBackground}">
-                    <UniformGrid Columns="2" Rows="3">
-                        <TextBox Margin="10" PlaceholderText="Pokemon name" VerticalAlignment="Center" />
+                <GroupBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"
+                          Background="{DynamicResource PrimaryGridBackground}" Margin="10">
+                    <GroupBox.Header>
+                        <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
+                            <TextBlock Text="Pokemon Summary" Foreground="{DynamicResource PrimaryTextForeground}"
+                                       FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" FontSize="15" />
+                        </Border>
+                    </GroupBox.Header>
+                    <UniformGrid Columns="2" Rows="6">
+                        <!-- Pokémon Stats Information Input Row -->
+                        <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5" />
 
-                        <ComboBox Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch"
-                                  PlaceholderText="Select Species"
-                                  IsEditable="True" MaxDropDownHeight="100" />
+                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList}" DisplayMemberBinding="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  PlaceholderText="Select Pokemon"
+                                  IsEditable="True" MaxDropDownHeight="100" IsTextSearchEnabled="True" Margin="5">
+                        </ComboBox>
 
-                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Shiny" />
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Shiny" Margin="5" />
 
-                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Item" />
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Item" Margin="5" />
 
-                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Ability" />
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
 
-                        <ComboBox Margin="10" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" />
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5" />
+
+                        <Separator />
+                        <Separator />
+
+                        <!-- Move Selection Input -->
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  IsEditable="True" PlaceholderText="Move 1" Margin="5" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  IsEditable="True" PlaceholderText="Move 2" Margin="5" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  IsEditable="True" PlaceholderText="Move 3" Margin="5" />
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                  IsEditable="True" PlaceholderText="Move 4" Margin="5" />
                     </UniformGrid>
-                </Grid>
+                </GroupBox>
 
-                <!-- Pokémon Stats Information Input Row -->
-                <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Stretch"
-                      Background="{DynamicResource PrimaryGridBackground}">
-                    <!-- Move Selection Input -->
-                    <UniformGrid Columns="2" Rows="2" VerticalAlignment="Stretch">
-                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
-                                  IsEditable="True" PlaceholderText="Move 1" />
-                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
-                                  IsEditable="True" PlaceholderText="Move 2" />
-                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
-                                  IsEditable="True" PlaceholderText="Move 3" />
-                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10"
-                                  IsEditable="True" PlaceholderText="Move 4" />
-                    </UniformGrid>
-                </Grid>
 
                 <!-- Stats Selection Input -->
                 <!-- Defaults to main games lineup (e.g., Scarlet/Violet, Sword/Shield), not Champions -->
-                <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch"
-                            Background="{DynamicResource PrimaryGridBackground}">
-                    <Grid RowDefinitions="Auto, *, *, *, *, *, *" Grid.ColumnDefinitions="*, *, *" VerticalAlignment="Stretch" Margin="0 10">
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Stats" VerticalAlignment="Center" />
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="EVs" VerticalAlignment="Center" />
-                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Total" VerticalAlignment="Center" />
+                <GroupBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="10">
+                    <GroupBox.Header>
+                        <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
+                            <TextBlock Text="EV Distribution" Foreground="{DynamicResource PrimaryTextForeground}"
+                                       FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" FontSize="15" />
+                        </Border>
+                    </GroupBox.Header>
+                    <Grid VerticalAlignment="Stretch"
+                          Background="{DynamicResource PrimaryGridBackground}">
+                        <Grid RowDefinitions="Auto, *, *, *, *, *, *, *" ColumnDefinitions="*, *, *"
+                              VerticalAlignment="Stretch" Margin="0 10">
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Stats" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="EVs" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="Total" VerticalAlignment="Center" />
+                            
+                            <Separator Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"/>
+                            
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="HP" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="2" x:Name="SliderHp" VerticalAlignment="Center"
+                                    Minimum="0"
+                                    Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[0]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding PokemonEvs[0]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
 
-                        <TextBlock Grid.Column="0" Grid.Row="1" Text="HP" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="1" x:Name="SliderHp" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4"/>
-                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding #SliderHp.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Attack" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="3" x:Name="SliderAtk" VerticalAlignment="Center"
+                                    Minimum="0"
+                                    Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[1]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding PokemonEvs[1]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
 
-                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Attack" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="2" x:Name="SliderAtk" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding #SliderAtk.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Grid.Row="4" Text="Defense" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="4" x:Name="SliderDef" VerticalAlignment="Center"
+                                    Minimum="0"
+                                    Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[2]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding PokemonEvs[2]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
 
-                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Defense" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="3" x:Name="SliderDef" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding #SliderDef.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Grid.Row="5" Text="Special Attack" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="5" x:Name="SliderSpA" VerticalAlignment="Center"
+                                    Minimum="0"
+                                    Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[3]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding PokemonEvs[3]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
 
-                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Special Attack" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="4" x:Name="SliderSpA" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding #SliderSpA.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Grid.Row="6" Text="Special Defense" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="6" x:Name="SliderSpDef" VerticalAlignment="Center"
+                                    Minimum="0" Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[4]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding PokemonEvs[4]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
 
-                        <TextBlock Grid.Column="0" Grid.Row="5" Text="Special Defense" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="5" x:Name="SliderSpDef" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding #SliderSpDef.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
-
-                        <TextBlock Grid.Column="0" Grid.Row="6" Text="Speed" VerticalAlignment="Center" />
-                        <Slider Grid.Column="1" Grid.Row="6" x:Name="SliderSpe" VerticalAlignment="Center" Minimum="0" Maximum="255" TickFrequency="4"
-                                IsSnapToTickEnabled="True" SmallChange="4" />
-                        <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding #SliderSpe.Value}" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" />
+                            <TextBlock Grid.Column="0" Grid.Row="7" Text="Speed" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Grid.Row="7" x:Name="SliderSpe" VerticalAlignment="Center"
+                                    Minimum="0"
+                                    Maximum="255" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[5]}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="7" Text="{Binding PokemonEvs[5]}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
+                        </Grid>
                     </Grid>
-                </Grid>
+                </GroupBox>
             </Grid>
         </Grid>
     </Border>

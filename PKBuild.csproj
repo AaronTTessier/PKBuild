@@ -60,6 +60,22 @@
       <AvaloniaResource Include="Assets\Images\search.png" />
       <None Remove="Assets\Images\guardian.png" />
       <AvaloniaResource Include="Assets\Images\guardian.png" />
+      <None Remove="Assets\Images\NormalIC_ZA.png" />
+      <AvaloniaResource Include="Assets\Images\NormalIC_ZA.png" />
+      <None Remove="Assets\Images\Attack_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\Attack_icon_HOME.png" />
+      <None Remove="Assets\Images\Defense_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\Defense_icon_HOME.png" />
+      <None Remove="Assets\Images\HP_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\HP_icon_HOME.png" />
+      <None Remove="Assets\Images\Special_Attack_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\Special_Attack_icon_HOME.png" />
+      <None Remove="Assets\Images\Special_Defense_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\Special_Defense_icon_HOME.png" />
+      <None Remove="Assets\Images\Speed_icon_HOME.png" />
+      <AvaloniaResource Include="Assets\Images\Speed_icon_HOME.png" />
+      <None Remove="Assets\Images\Normal_icon_SV.png" />
+      <AvaloniaResource Include="Assets\Images\Normal_icon_SV.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -72,5 +88,10 @@
     <ItemGroup>
       <Folder Include="Assets\Fonts\" />
       <Folder Include="Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Data\Pokemon.json" />
+      <EmbeddedResource Include="Data\Pokemon.json" />
     </ItemGroup>
 </Project>

@@ -2,7 +2,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
 using PKBuild.Factory;
-using System.Text.Json;
 
 namespace PKBuild.ViewModels;
 
@@ -38,7 +37,7 @@ public partial class MainWindowViewModel : ViewModelBase
     /// </summary>
     public MainWindowViewModel()
     {
-        PkbCurrentPage = new ItemsPageViewModel();
+        PkbCurrentPage = new TeamsPageViewModel();
     }
     /*public MainWindowViewModel(PkPageFactory pageFactory, DbFactory dbFactory)
     {

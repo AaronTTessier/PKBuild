@@ -29,6 +29,10 @@ public partial class PokemonPageModel : ObservableObject
     
     [ObservableProperty] private int _pkdxNatNum;
 
+    [ObservableProperty] private int _ability;
+
+    [ObservableProperty] private int _pokeball;
+
     [ObservableProperty] private int _eVHp;
 
     [ObservableProperty] private int _eVAtk;
@@ -60,5 +64,7 @@ public partial class PokemonPageModel : ObservableObject
     [ObservableProperty] private int? _teraBaseType;
     
     [ObservableProperty] private int? _teraOverrideType;
-    
+
+    [ObservableProperty] private int _shiny;
+
 }

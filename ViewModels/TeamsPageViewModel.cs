@@ -1,21 +1,27 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Reflection;
+using System.Text.Json;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PKBuild.Data;
 using PKBuild.Models;
-using PKBuild.Views;
 
 namespace PKBuild.ViewModels;
 
 public partial class TeamsPageViewModel : PkPageViewModel
 {
-    private ObservableCollection<PokemonPageModel>? _pokemon;
-    
-    public ObservableCollection<PokemonPageModel>? Pokemon
-    {
-        get => _pokemon;
-        set => SetProperty(ref _pokemon, value);
-    }
+    public ObservableCollection<PokemonPageModel>? PokemonTeamList;
 
+    public List<Pokemon>? PokedexList { get; set; }
+    private Root? PokemonRoot { get; }
+
+    [ObservableProperty]
+    private Pokemon? _selectedPokemon;
+
+    public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
+    
     [RelayCommand]
     private void ChangePokemon()
     {
@@ -23,44 +29,35 @@ public partial class TeamsPageViewModel : PkPageViewModel
     }
 
     [RelayCommand]
-    public void GatherPokemon()
+    private void GatherPokemon()
     {
         // TODO: Fetch from database of currently logged in user
-        /*var pkmnTest = new PokemonPageModel
-        {
-            PkmnId = 0,
-            UserId = 0,
-            StatId = 0,
-            GenId = 0,
-            PkdxRegNum = 143,
-            PkdxNatNum = 143,
-            EVHp = 252,
-            EVAtk = 252,
-            EVDef = 4,
-            EVSpA = 16,
-            EVSpD = 9,
-            EVSpe = 41,
-            IVHp = 31,
-            IVAtk = 31,
-            IVDef = 31,
-            IVSpA = 31,
-            IVSpD = 31,
-            IVSpe = 31,
-            Alpha = true,
-            GMax = true,
-            TeraBaseType = 0,
-            TeraOverrideType = null
+    }
 
-        Pokemon =
-        [
-            pkmnTest
-        ];
-        };*/
+    private static Root? RetrievePokedexFromJson()
+    {
+        using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("PKBuild.Data.Pokemon.json")!;
+        using StreamReader reader = new StreamReader(stream);
+        string json = reader.ReadToEnd();
+        return JsonSerializer.Deserialize<Root>(json);
+    }
+
+    private List<Pokemon> LoadPokemonFromJson()
+    { 
+        List<Pokemon> list = new();
+        foreach (Pokemon pkmn in PokemonRoot!.pokemon)
+        {
+            list.Add(pkmn);
+        }
+
+        return list;
     }
     
     public TeamsPageViewModel()
     {
         PkbPageNames = PkbPageNames.Teams;
+        PokemonRoot = RetrievePokedexFromJson();
+        PokedexList = LoadPokemonFromJson();
         GatherPokemon();
     }
 }

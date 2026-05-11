@@ -1,0 +1,49 @@
+{
+  "pokemon": [
+    {
+      "name": "Bulbasaur",
+      "dex": "001",
+      "type": ["Grass", "Poison"],
+      "ability": ["Overgrow", "Chlorophyll"],
+      "basestats": {
+        "hp": "45",
+        "atk": "49",
+        "def": "49",
+        "spa": "65",
+        "spd": "65",
+        "spe": "45",
+        "total": "318"
+      }
+    },
+    {
+      "name": "Ivysaur",
+      "dex": "002",
+      "type": ["Grass", "Poison"],
+      "ability": ["Overgrow", "Chlorophyll"],
+      "basestats": {
+        "hp": "60",
+        "atk": "62",
+        "def": "63",
+        "spa": "80",
+        "spd": "80",
+        "spe": "60",
+        "total": "405"
+      }
+    },
+    {
+      "name": "Venusaur",
+      "dex": "003",
+      "type": ["Grass", "Poison"],
+      "ability": ["Overgrow", "Chlorophyll"],
+      "basestats": {
+        "hp": "80",
+        "atk": "82",
+        "def": "83",
+        "spa": "100",
+        "spd": "100",
+        "spe": "80",
+        "total": "525"
+      }
+    }
+  ]
+}

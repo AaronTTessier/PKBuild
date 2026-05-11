@@ -45,20 +45,28 @@
             </StackPanel>
 
 
+            <!-- TODO: Add "No Move Selected" Message during Viewmodel completion -->
             <Border Grid.Column="1" Grid.Row="1" BorderBrush="{DynamicResource PrimaryTextForeground}"
                     BorderThickness="3" CornerRadius="2" Margin="6">
-                <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
-                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="*, *, *">
-                        <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
-                        <Label Grid.Column="1" Grid.Row="0" Margin="6">Type</Label>
-                        <Label Grid.Column="2" Grid.Row="0" Margin="6">Power</Label>
-                        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="Black"
-                                BorderThickness="2"/>
-                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">?MOVENAME?</TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="2" Margin="6">?MOVETYPE?</TextBlock>
-                        <TextBlock Grid.Column="2" Grid.Row="2" Margin="6">?MOVEPOWER?</TextBlock>
-                    </Grid>
-                </StackPanel>
+                <Panel >
+                    <StackPanel Orientation="Vertical" Background="{DynamicResource PrimaryGridBackground}">
+                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*, *, *">
+                            <Label Grid.Column="0" Grid.Row="0" Margin="6">Name</Label>
+                            <Label Grid.Column="1" Grid.Row="0" Margin="6">Type</Label>
+                            <Label Grid.Column="2" Grid.Row="0" Margin="6">Power</Label>
+                            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black"
+                                    BorderThickness="2"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Margin="6">?MOVENAME?</TextBlock>
+                            <TextBlock Grid.Column="1" Grid.Row="2" Margin="6">?MOVETYPE?</TextBlock>
+                            <TextBlock Grid.Column="2" Grid.Row="2" Margin="6">?MOVEPOWER?</TextBlock>
+                        </Grid>
+                    </StackPanel>
+                    
+                    <!-- TODO: Add logic for StackPanel visibility when no moves are selected -->
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="False">
+                        <TextBlock Foreground="Gray" Text="No Moves Selected."/>
+                    </StackPanel>
+                </Panel>
             </Border>
         </Grid>
     </Border>

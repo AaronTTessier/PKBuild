@@ -78,7 +78,7 @@
                         <!-- Pokémon Stats Information Input Row -->
                         <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5" />
 
-                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList}" DisplayMemberBinding="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}" DisplayMemberBinding="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Stretch"
                                   PlaceholderText="Select Pokemon"
                                   IsEditable="True" MaxDropDownHeight="100" IsTextSearchEnabled="True" Margin="5">
                         </ComboBox>

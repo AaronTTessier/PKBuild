@@ -14,8 +14,7 @@ public partial class TeamsPageViewModel : PkPageViewModel
 {
     public ObservableCollection<PokemonPageModel>? PokemonTeamList;
 
-    public List<Pokemon>? PokedexList { get; set; }
-    private Root? PokemonRoot { get; }
+    private Root? PokedexList { get; }
 
     [ObservableProperty]
     private Pokemon? _selectedPokemon;
@@ -41,23 +40,11 @@ public partial class TeamsPageViewModel : PkPageViewModel
         string json = reader.ReadToEnd();
         return JsonSerializer.Deserialize<Root>(json);
     }
-
-    private List<Pokemon> LoadPokemonFromJson()
-    { 
-        List<Pokemon> list = new();
-        foreach (Pokemon pkmn in PokemonRoot!.pokemon)
-        {
-            list.Add(pkmn);
-        }
-
-        return list;
-    }
     
     public TeamsPageViewModel()
     {
         PkbPageNames = PkbPageNames.Teams;
-        PokemonRoot = RetrievePokedexFromJson();
-        PokedexList = LoadPokemonFromJson();
+        PokedexList = RetrievePokedexFromJson();
         GatherPokemon();
     }
 }

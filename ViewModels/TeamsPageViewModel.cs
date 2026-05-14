@@ -20,7 +20,7 @@ public partial class TeamsPageViewModel : PkPageViewModel
     private Pokemon? _selectedPokemon;
 
     public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
-    
+
     [RelayCommand]
     private void ChangePokemon()
     {

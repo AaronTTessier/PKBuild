@@ -3,8 +3,14 @@
     {
       "name": "Bulbasaur",
       "dex": "001",
-      "type": ["Grass", "Poison"],
-      "ability": ["Overgrow", "Chlorophyll"],
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "ability": [
+        "Overgrow",
+        "Chlorophyll"
+      ],
       "basestats": {
         "hp": "45",
         "atk": "49",
@@ -18,8 +24,14 @@
     {
       "name": "Ivysaur",
       "dex": "002",
-      "type": ["Grass", "Poison"],
-      "ability": ["Overgrow", "Chlorophyll"],
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "ability": [
+        "Overgrow",
+        "Chlorophyll"
+      ],
       "basestats": {
         "hp": "60",
         "atk": "62",
@@ -33,8 +45,14 @@
     {
       "name": "Venusaur",
       "dex": "003",
-      "type": ["Grass", "Poison"],
-      "ability": ["Overgrow", "Chlorophyll"],
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      "ability": [
+        "Overgrow",
+        "Chlorophyll"
+      ],
       "basestats": {
         "hp": "80",
         "atk": "82",
@@ -43,6 +61,67 @@
         "spd": "100",
         "spe": "80",
         "total": "525"
+      }
+    },
+    {
+      "name": "Charmander",
+      "dex": "004",
+      "type": [
+        "Fire"
+      ],
+      "ability": [
+        "Blaze",
+        "Solar Power"
+      ],
+      "basestats": {
+        "hp": "39",
+        "atk": "52",
+        "def": "43",
+        "spa": "60",
+        "spd": "50",
+        "spe": "65",
+        "total": "309"
+      }
+    },
+    {
+      "name": "Charmeleon",
+      "dex": "005",
+      "type": [
+        "Fire"
+      ],
+      "ability": [
+        "Blaze",
+        "Solar Power"
+      ],
+      "basestats": {
+        "hp": "58",
+        "atk": "64",
+        "def": "58",
+        "spa": "80",
+        "spd": "65",
+        "spe": "80",
+        "total": "405"
+      }
+    },
+    {
+      "name": "Charizard",
+      "dex": "006",
+      "type": [
+        "Fire",
+        "Flying"
+      ],
+      "ability": [
+        "Blaze",
+        "Solar Power"
+      ],
+      "basestats": {
+        "hp": "78",
+        "atk": "84",
+        "def": "78",
+        "spa": "106",
+        "spd": "85",
+        "spe": "100",
+        "total": "534"
       }
     }
   ]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
@@ -15,12 +16,17 @@ public partial class TeamsPageViewModel : PkPageViewModel
 
     [ObservableProperty]
     private Root? _pokedexList;
+    
+    public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
+
+    public PokeBalls[] Pokeballs { get; } = (PokeBalls[])Enum.GetValues(typeof(PokeBalls));
 
     [ObservableProperty]
     private Pokemon? _selectedPokemon;
-
-    public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
-
+    
+    [ObservableProperty]
+    private PokeBalls _selectedPokeBall;
+    
     [RelayCommand]
     private void ChangePokemon()
     {
@@ -45,6 +51,7 @@ public partial class TeamsPageViewModel : PkPageViewModel
     {
         PkbPageNames = PkbPageNames.Teams;
         PokedexList = RetrievePokedexFromJson();
+        Console.WriteLine(SelectedPokeBall);
         GatherPokemon();
     }
 }

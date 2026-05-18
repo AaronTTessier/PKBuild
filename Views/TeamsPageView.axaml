@@ -4,13 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
-             xmlns:local="clr-namespace:PKBuild.Data"
+             xmlns:local="clr-namespace:PKBuild.Converter"
              Background="{DynamicResource PrimaryGridBackground}"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
     <Design.DataContext>
-        <pkbvm:TeamsPageViewModel />
+        <pkbvm:TeamsPageViewModel/>
     </Design.DataContext>
+    
+    <UserControl.Resources>
+        <local:EnumDescConverter x:Key="PokeBallEnumConverter"/>
+    </UserControl.Resources>
     <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
         <Grid RowDefinitions="Auto, *">
             <!-- Pokémon Party Topbar -->
@@ -77,7 +81,7 @@
                     </GroupBox.Header>
                     <UniformGrid Columns="2" Rows="6">
                         <!-- Pokémon Stats Information Input Row -->
-                        <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5" />
+                        <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5"/>
 
                         <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}" SelectedItem="{Binding SelectedPokemon}"
                                   VerticalAlignment="Center" HorizontalAlignment="Stretch"
@@ -98,9 +102,15 @@
 
                         <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Item" Margin="5" />
 
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
+                        <ComboBox x:Name="AbilityComboBox" ItemsSource="{Binding SelectedPokemon?.ability}" HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
 
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5" />
+                        <ComboBox x:Name="PokeballComboBox" ItemsSource="{Binding Pokeballs}" SelectedItem="{Binding SelectedPokeBall}" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource PokeBallEnumConverter}}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
 
                         <Separator />
                         <Separator />

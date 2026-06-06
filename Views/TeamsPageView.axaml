@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1020" d:DesignHeight="650"
              xmlns:pkbvm="clr-namespace:PKBuild.ViewModels"
-             xmlns:local="clr-namespace:PKBuild.Converter"
+             xmlns:conv="clr-namespace:PKBuild.Converter"
              Background="{DynamicResource PrimaryGridBackground}"
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
@@ -13,8 +13,9 @@
     </Design.DataContext>
     
     <UserControl.Resources>
-        <local:EnumDescConverter x:Key="PokeBallEnumConverter"/>
+        <conv:EnumDescConverter x:Key="EnumDescConverter"/>
     </UserControl.Resources>
+    
     <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
         <Grid RowDefinitions="Auto, *">
             <!-- Pokémon Party Topbar -->
@@ -98,16 +99,16 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
 
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Nature" Margin="5" />
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Nature" Margin="5" ItemsSource="{Binding Natures}"/>
 
                         <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Item" Margin="5" />
 
                         <ComboBox x:Name="AbilityComboBox" ItemsSource="{Binding SelectedPokemon?.ability}" HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
 
-                        <ComboBox x:Name="PokeballComboBox" ItemsSource="{Binding Pokeballs}" SelectedItem="{Binding SelectedPokeBall}" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5">
+                        <ComboBox x:Name="PokeballComboBox" ItemsSource="{Binding Pokeballs}" SelectedItem="{Binding SelectedPokeBallItem}" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Converter={StaticResource PokeBallEnumConverter}}"/>
+                                    <TextBlock Text="{Binding Converter={StaticResource EnumDescConverter}}"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>

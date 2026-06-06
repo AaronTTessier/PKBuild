@@ -13,19 +13,18 @@ namespace PKBuild.ViewModels;
 public partial class TeamsPageViewModel : PkPageViewModel
 {
     public ObservableCollection<PokemonPageModel>? PokemonTeamList;
-
-    [ObservableProperty]
-    private Root? _pokedexList;
     
+    [ObservableProperty]
+    public partial Root? PokedexList { get; set; }
     public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
-
-    public PokeBalls[] Pokeballs { get; } = (PokeBalls[])Enum.GetValues(typeof(PokeBalls));
+    public Items[] Pokeballs { get; } = Enum.GetValues<Items>();
+    public Nature[] Natures { get; } = Enum.GetValues<Nature>();
 
     [ObservableProperty]
     private Pokemon? _selectedPokemon;
     
     [ObservableProperty]
-    private PokeBalls _selectedPokeBall;
+    private Items _selectedPokeBallItem;
     
     [RelayCommand]
     private void ChangePokemon()
@@ -51,7 +50,6 @@ public partial class TeamsPageViewModel : PkPageViewModel
     {
         PkbPageNames = PkbPageNames.Teams;
         PokedexList = RetrievePokedexFromJson();
-        Console.WriteLine(SelectedPokeBall);
         GatherPokemon();
     }
 }

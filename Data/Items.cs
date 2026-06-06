@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace PKBuild.Data;
 
-public enum PokeBalls
+public enum Items
 {
     [Description("Master Ball")]
     Master,
@@ -80,4 +80,9 @@ public enum PokeBalls
     HisuiGigaton,
     [Description("Hisuian Origin Ball")]
     HisuiOrigin
+}
+
+public enum Berries
+{
+    
 }

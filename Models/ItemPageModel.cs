@@ -6,7 +6,7 @@ public class ItemPageModel
 {
     public int ItemId { get; init; }
     
-    public string ItemName { get; init; }
+    public int ItemNameNdx { get; init; }
     
     public string ItemType { get; init; }
     

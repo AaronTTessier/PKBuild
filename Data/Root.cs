@@ -3,14 +3,14 @@ using System.Collections.ObjectModel;
 
 namespace PKBuild.Data;
 
-public class Root
+public class Root(ObservableCollection<Pokemon> pokemon)
 {
-    public ObservableCollection<Pokemon> pokemon { get; set; }
+    public ObservableCollection<Pokemon> pokemon { get; set; } = pokemon;
 }
 
 public class Pokemon
 {
-    public string name { get; set; }
+    public  string name { get; set; }
     public string dex { get; set; }
     public List<string> type { get; set; }
     public List<string> ability { get; set; }

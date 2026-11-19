@@ -17,14 +17,19 @@ public partial class TeamsPageViewModel : PkPageViewModel
     [ObservableProperty]
     public partial Root? PokedexList { get; set; }
     public ObservableCollection<int> PokemonEvs { get; set; } = [0, 0, 0, 0, 0, 0];
-    public Items[] Pokeballs { get; } = Enum.GetValues<Items>();
+    public PokeBalls[] Pokeballs { get; } = Enum.GetValues<PokeBalls>();
     public Nature[] Natures { get; } = Enum.GetValues<Nature>();
 
     [ObservableProperty]
     private Pokemon? _selectedPokemon;
     
     [ObservableProperty]
-    private Items _selectedPokeBallItem;
+    private PokeBalls _selectedPokeBallItem;
+    
+    [ObservableProperty]
+    private Nature _selectedNature;
+
+    [ObservableProperty] private PokeBalls _selectedItem;
     
     [RelayCommand]
     private void ChangePokemon()

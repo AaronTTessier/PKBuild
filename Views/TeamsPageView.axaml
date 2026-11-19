@@ -9,13 +9,13 @@
              x:DataType="pkbvm:TeamsPageViewModel"
              x:Class="PKBuild.Views.TeamsPageView">
     <Design.DataContext>
-        <pkbvm:TeamsPageViewModel/>
+        <pkbvm:TeamsPageViewModel />
     </Design.DataContext>
-    
+
     <UserControl.Resources>
-        <conv:EnumDescConverter x:Key="EnumDescConverter"/>
+        <conv:EnumDescConverter x:Key="EnumDescConverter" />
     </UserControl.Resources>
-    
+
     <Border BorderBrush="{DynamicResource PrimaryTextForeground}" BorderThickness="6" CornerRadius="2">
         <Grid RowDefinitions="Auto, *">
             <!-- Pokémon Party Topbar -->
@@ -82,33 +82,38 @@
                     </GroupBox.Header>
                     <UniformGrid Columns="2" Rows="6">
                         <!-- Pokémon Stats Information Input Row -->
-                        <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5"/>
+                        <TextBox PlaceholderText="Pokemon name" VerticalAlignment="Center" Margin="5" />
 
-                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}" SelectedItem="{Binding SelectedPokemon}"
+                        <ComboBox x:Name="PokedexComboBox" ItemsSource="{Binding PokedexList?.pokemon}"
+                                  SelectedItem="{Binding SelectedPokemon}"
                                   VerticalAlignment="Center" HorizontalAlignment="Stretch"
                                   PlaceholderText="Select Pokemon"
                                   IsEditable="True" MaxDropDownHeight="100" IsTextSearchEnabled="True" Margin="5">
-                            
+
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding name}"/>
-                                        <Image Source="/Assets/Images/pokeball.png" Height="20"/>
+                                        <TextBlock Text="{Binding name}" />
+                                        <Image Source="/Assets/Images/pokeball.png" Height="20" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
 
-                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Nature" Margin="5" ItemsSource="{Binding Natures}"/>
+                        <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Nature" Margin="5"
+                                  ItemsSource="{Binding Natures}" />
 
                         <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Item" Margin="5" />
 
-                        <ComboBox x:Name="AbilityComboBox" ItemsSource="{Binding SelectedPokemon?.ability}" HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
+                        <ComboBox x:Name="AbilityComboBox" ItemsSource="{Binding SelectedPokemon?.ability}"
+                                  HorizontalAlignment="Stretch" PlaceholderText="Ability" Margin="5" />
 
-                        <ComboBox x:Name="PokeballComboBox" ItemsSource="{Binding Pokeballs}" SelectedItem="{Binding SelectedPokeBallItem}" HorizontalAlignment="Stretch" PlaceholderText="Poke Ball" Margin="5">
+                        <ComboBox x:Name="PokeballComboBox" ItemsSource="{Binding Pokeballs}"
+                                  SelectedItem="{Binding SelectedPokeBallItem}" HorizontalAlignment="Stretch"
+                                  PlaceholderText="Poke Ball" Margin="5">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Converter={StaticResource EnumDescConverter}}"/>
+                                    <TextBlock Text="{Binding Converter={StaticResource EnumDescConverter}}" />
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
@@ -134,7 +139,8 @@
                 <GroupBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="10">
                     <GroupBox.Header>
                         <Border Background="{DynamicResource PrimaryTopbarBackground}" Padding="10" CornerRadius="20">
-                            <TextBlock Text="Stat Point Distribution" Foreground="{DynamicResource PrimaryTextForeground}"
+                            <TextBlock Text="Stat Point Distribution"
+                                       Foreground="{DynamicResource PrimaryTextForeground}"
                                        FontFamily="{DynamicResource LexendRegular}" FontWeight="Normal" FontSize="15" />
                         </Border>
                     </GroupBox.Header>
@@ -151,8 +157,8 @@
                             <TextBlock Grid.Column="0" Grid.Row="2" Text="HP" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="2" x:Name="SliderHp" VerticalAlignment="Center"
                                     Minimum="0"
-                                    Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[0]}" />
+                                    Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[0]}" />
                             <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding PokemonEvs[0]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -160,8 +166,8 @@
                             <TextBlock Grid.Column="0" Grid.Row="3" Text="Attack" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="3" x:Name="SliderAtk" VerticalAlignment="Center"
                                     Minimum="0"
-                                    Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[1]}" />
+                                    Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[1]}" />
                             <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding PokemonEvs[1]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -169,8 +175,8 @@
                             <TextBlock Grid.Column="0" Grid.Row="4" Text="Defense" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="4" x:Name="SliderDef" VerticalAlignment="Center"
                                     Minimum="0"
-                                    Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[2]}" />
+                                    Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[2]}" />
                             <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding PokemonEvs[2]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -178,16 +184,16 @@
                             <TextBlock Grid.Column="0" Grid.Row="5" Text="Special Attack" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="5" x:Name="SliderSpA" VerticalAlignment="Center"
                                     Minimum="0"
-                                    Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[3]}" />
+                                    Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[3]}" />
                             <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding PokemonEvs[3]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
 
                             <TextBlock Grid.Column="0" Grid.Row="6" Text="Special Defense" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="6" x:Name="SliderSpDef" VerticalAlignment="Center"
-                                    Minimum="0" Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[4]}" />
+                                    Minimum="0" Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[4]}" />
                             <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding PokemonEvs[4]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
@@ -195,8 +201,8 @@
                             <TextBlock Grid.Column="0" Grid.Row="7" Text="Speed" VerticalAlignment="Center" />
                             <Slider Grid.Column="1" Grid.Row="7" x:Name="SliderSpe" VerticalAlignment="Center"
                                     Minimum="0"
-                                    Maximum="32" TickFrequency="1"
-                                    IsSnapToTickEnabled="True" SmallChange="1" Value="{Binding PokemonEvs[5]}" />
+                                    Maximum="252" TickFrequency="4"
+                                    IsSnapToTickEnabled="True" SmallChange="4" Value="{Binding PokemonEvs[5]}" />
                             <TextBlock Grid.Column="2" Grid.Row="7" Text="{Binding PokemonEvs[5]}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center" />
